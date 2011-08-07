@@ -1,0 +1,7 @@
+Please, add the following lines to your .vimrc
+
+fun! MySys()
+	return "linux"
+endfun
+
+source /path/to/my/vimrc.vim
