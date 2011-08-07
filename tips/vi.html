@@ -1,0 +1,619 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="Producer" content="GNU Ghostscript 7.05"><title>Vi Tutorial</title></head><body bgcolor="#ffffff" link="blue" vlink="blue"><table border="1" width="100%"><tbody><tr><td><table color="#ffffff" bgcolor="#ffffff" border="1" cellpadding="10" cellspacing="0" width="100%"><tbody><tr><td><font color="black" face="arial,sans-serif" size="-1">Esta é a versão em html do arquivo <a href="http://www.inf.ufes.br/%7Eproinfo/docs/vi/vi.pdf"><font color="blue">http://www.inf.ufes.br/~proinfo/docs/vi/vi.pdf</font></a>.<br> <b><font color="#0039b6">G</font> <font color="#c41200">o</font> <font color="#f3c518">o</font> <font color="#0039b6">g</font> <font color="#30a72f">l</font> <font color="#c41200">e</font></b> cria automaticamente versões  em texto de documentos à medida que vasculha a web.<br>Para criar um link para esta página ou armazenar referência a ela, use: <code>http://www.google.com/search?q=cache:vWoXXr4k0bwJ:www.inf.ufes.br/~proinfo/docs/vi/vi.pdf&amp;hl=pt-BR&amp;ct=clnk&amp;cd=2&amp;gl=br&amp;client=firefox-a</code></font><br><br><center><font size="-2"><i>O Google não é associado aos autores desta página nem é responsável por seu conteúdo.</i></font></center></td></tr></tbody></table></td></tr></tbody></table>
+<hr>
+<div style="position: relative;">
+
+
+
+
+
+
+<table border="0" width="100%"><tbody><tr><td align="right" bgcolor="#eeeeee"><font face="arial,sans-serif"><a name="1"><b>Page 1</b></a></font></td></tr></tbody></table><font face="Times" size="6"><span style="font-size: 43px; font-family: Times;">
+<div style="position: absolute; top: 170px; left: 338px;"><nobr><b></b></nobr></div>
+</span></font>
+<font face="Times" size="4"><span style="font-size: 28px; font-family: Times;">
+<div style="position: absolute; top: 221px; left: 344px;"><nobr>Vikram Vaswani</nobr></div>
+</span></font>
+<font face="Times" size="4"><span style="font-size: 20px; font-family: Times;">
+<div style="position: absolute; top: 267px; left: 251px;"><nobr><i>Tradução: Eduardo Zambon e Raul Lopes</i></nobr></div>
+</span></font>
+<font face="Times" size="4"><span style="font-size: 28px; font-family: Times;">
+<div style="position: absolute; top: 317px; left: 81px;"><nobr><b>Introdução</b></nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 366px; left: 81px;"><nobr>N.T.: Boa parte das piadas sem graça do documento original foram suprimidas para</nobr></div>
+<div style="position: absolute; top: 387px; left: 81px;"><nobr>facilitar a tradução.</nobr></div>
+<div style="position: absolute; top: 424px; left: 81px;"><nobr>N.T.: O vi é um editor de texto padrão do mundo UNIX, podendo ser encontrado em</nobr></div>
+<div style="position: absolute; top: 445px; left: 81px;"><nobr>qualquer distribuição do Linux. No entanto, o seu uso é bastante diferente de</nobr></div>
+<div style="position: absolute; top: 468px; left: 81px;"><nobr>editores de textos do mundo Windows. Essa foi a principal motivação para efetuar a</nobr></div>
+<div style="position: absolute; top: 489px; left: 81px;"><nobr>tradução desse tutorial. As únicas partes essenciais desse texto são as duas primeiras</nobr></div>
+<div style="position: absolute; top: 510px; left: 81px;"><nobr>seções. Mas, é bastante desejável que um adminstrador de sistemas UNIX tenha um</nobr></div>
+<div style="position: absolute; top: 532px; left: 81px;"><nobr>domínio mais amplo de uma ferramenta tão útil e importante como o vi. Por isso,</nobr></div>
+<div style="position: absolute; top: 553px; left: 81px;"><nobr>recomendo a todos que pelo menos dêem uma lida até o final.</nobr></div>
+</span></font>
+<font face="Times" size="4"><span style="font-size: 28px; font-family: Times;">
+<div style="position: absolute; top: 602px; left: 81px;"><nobr><b>Vi? V o quê?</b></nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 651px; left: 81px;"><nobr>Vi é um "editor visual" - um editor que lhe permite visualizar um documento, na sua</nobr></div>
+<div style="position: absolute; top: 672px; left: 81px;"><nobr>totalidade, a medida que você o cria e edita. Aqueles que pertencem à geração</nobr></div>
+<div style="position: absolute; top: 693px; left: 81px;"><nobr>Microsoft Word podem achar isso um pouco redundante - mas é claro, você está</nobr></div>
+<div style="position: absolute; top: 715px; left: 81px;"><nobr>pensando, todos os editores deixam você fazer isso! Bem, não exatamente - nos</nobr></div>
+<div style="position: absolute; top: 736px; left: 81px;"><nobr>primórdios do UNIX, editores de linha como edlin e ex eram o padrão e criar um</nobr></div>
+<div style="position: absolute; top: 759px; left: 81px;"><nobr>documento em uma dessas belezinhas envolvia o uso de comandos arcanos para </nobr></div>
+<div style="position: absolute; top: 780px; left: 81px;"><nobr>adicionar, remover e recuperar o texto de um buffer invisível.</nobr></div>
+<div style="position: absolute; top: 816px; left: 81px;"><nobr>O tempo passa e quase todos os Unices hoje vem com alguma variante do vi - ele é,</nobr></div>
+<div style="position: absolute; top: 838px; left: 81px;"><nobr>com certeza, um dos editores mais poderosos por aí, com uma grande quantidade de</nobr></div>
+<div style="position: absolute; top: 859px; left: 81px;"><nobr>características úteis e interessantes. Eu costumo chamá-lo de Ferrari dos editores de</nobr></div>
+<div style="position: absolute; top: 882px; left: 81px;"><nobr>texto: é rápido, tem estilo e uma vez que você sabe como dirigir você nunca mais</nobr></div>
+<div style="position: absolute; top: 903px; left: 81px;"><nobr>vai ter dificuldade de arrumar um encontro no sábado à noite...</nobr></div>
+</span></font>
+<font face="Times" size="4"><span style="font-size: 28px; font-family: Times;">
+<div style="position: absolute; top: 950px; left: 81px;"><nobr><b>Iniciando</b></nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 999px; left: 81px;"><nobr>Iniciar uma sessão do vi é ridiculamente simples. Digite</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 1037px; left: 81px;"><nobr>$ vi</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 1072px; left: 81px;"><nobr>no prompt do terminal UNIX, seguido de um enter, e o vi abrirá um arquivo vazio</nobr></div>
+<div style="position: absolute; top: 1095px; left: 81px;"><nobr>para você começar a trabalhar. Alternativamente, você pode especificar o arquivo a</nobr></div>
+<div style="position: absolute; top: 1116px; left: 81px;"><nobr>ser aberto na própria linha de comando, dessa forma:</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 1153px; left: 81px;"><nobr>$ vi meuarquivo</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 1189px; left: 81px;"><nobr>Não se preocupe com os no editor - eles são apenas indicadores visuais do fim do</nobr></div>
+<div style="position: absolute; top: 1210px; left: 81px;"><nobr>seu arquivo e não aparecem no seu documento.</nobr></div>
+<div style="position: absolute; top: 1248px; left: 81px;"><nobr>A primeira (e mais confusa) coisa sobre o vi são os vários diferentes modos nos</nobr></div>
+</span></font>
+
+<div style="position: absolute; top: 1363px; left: 0pt;"><hr><table border="0" width="100%"><tbody><tr><td align="right" bgcolor="#eeeeee"><font face="arial,sans-serif"><a name="2"><b>Page 2</b></a></font></td></tr></tbody></table></div><font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 1366px; left: 81px;"><nobr>quais o editor pode operar. Para os nossos propósitos, eu vou separá-los em duas</nobr></div>
+<div style="position: absolute; top: 1387px; left: 81px;"><nobr>amplas categorias: "modo de edição" (insert mode) e "modo de comando" (command</nobr></div>
+<div style="position: absolute; top: 1410px; left: 81px;"><nobr>mode). O "modo de edição" é aonde você vai passar a maior parte do seu tempo -</nobr></div>
+<div style="position: absolute; top: 1431px; left: 81px;"><nobr>ele permite adicionar (ou inserir) texto no seu documento. O "modo de comando", por</nobr></div>
+<div style="position: absolute; top: 1453px; left: 81px;"><nobr>outro lado, permite que você se mova pelo documento, apague ou substitua blocos de</nobr></div>
+<div style="position: absolute; top: 1474px; left: 81px;"><nobr>texto e acesse funções úteis do vi como buffers, por exemplo.</nobr></div>
+<div style="position: absolute; top: 1510px; left: 81px;"><nobr>Quando o vi é iniciado, ele geralmente está em modo de comando. Para entrar no</nobr></div>
+<div style="position: absolute; top: 1533px; left: 81px;"><nobr>modo de edição digite</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 1570px; left: 81px;"><nobr>i</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 1606px; left: 81px;"><nobr>o vi mostrar um aviso da troca de modos no canto inferior esquerdo. Agora você pode</nobr></div>
+<div style="position: absolute; top: 1627px; left: 81px;"><nobr>digitar o texto no documento de maneira normal. Quando tiver terminado, aperte</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 1664px; left: 81px;"><nobr>ESC</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 1701px; left: 81px;"><nobr>para retornar ao modo de comando.</nobr></div>
+<div style="position: absolute; top: 1737px; left: 81px;"><nobr>Para começar a inserir texto numa linha nova, use</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 1775px; left: 81px;"><nobr>o</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 1810px; left: 81px;"><nobr>para entrar no modo de edição com o cursor já posicionado na próxima linha, ou</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 1847px; left: 81px;"><nobr>O</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 1884px; left: 81px;"><nobr>para entrar no modo com o cursor na linha anterior.</nobr></div>
+<div style="position: absolute; top: 1920px; left: 81px;"><nobr>Além de inserir texto, o vi também permite que você sobrescreva um texto existente</nobr></div>
+<div style="position: absolute; top: 1942px; left: 81px;"><nobr>- isso é chamado de "modo de substituição" (replace mode), que pode ser acessado</nobr></div>
+<div style="position: absolute; top: 1963px; left: 81px;"><nobr>digitando-se</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 2000px; left: 81px;"><nobr>R</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 2037px; left: 81px;"><nobr>no modo de comando. Tudo que você digitar agora será "escrito por cima" do texto</nobr></div>
+<div style="position: absolute; top: 2058px; left: 81px;"><nobr>existente. Se a sua intenção era substituir um único caractere - por exemplo, para</nobr></div>
+<div style="position: absolute; top: 2080px; left: 81px;"><nobr>corrigir um erro de digitação - use</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 2117px; left: 81px;"><nobr>r</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 2152px; left: 81px;"><nobr>para substituir um único caractere; o editor retornará automaticamente para o modo</nobr></div>
+<div style="position: absolute; top: 2175px; left: 81px;"><nobr>de comando quando o caractere for substituído.</nobr></div>
+<div style="position: absolute; top: 2211px; left: 81px;"><nobr>Obviamente, em algum momento, você vai precisar salvar o seu trabalho. No vi, isso</nobr></div>
+<div style="position: absolute; top: 2233px; left: 81px;"><nobr>é feito via o comando de "escrita" (write), abreviado para</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 2270px; left: 81px;"><nobr>:w</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 2305px; left: 81px;"><nobr>Para sair, use o comando</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 2344px; left: 81px;"><nobr>:q</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 2379px; left: 81px;"><nobr>O vi também permite que se combine comandos. Por exemplo, tente</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 2417px; left: 81px;"><nobr>:wq</nobr></div>
+</span></font>
+
+<div style="position: absolute; top: 2551px; left: 0pt;"><hr><table border="0" width="100%"><tbody><tr><td align="right" bgcolor="#eeeeee"><font face="arial,sans-serif"><a name="3"><b>Page 3</b></a></font></td></tr></tbody></table></div><font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 2554px; left: 81px;"><nobr>para salvar seu documento e sair do programa. Alternativamente, se você quiser</nobr></div>
+<div style="position: absolute; top: 2575px; left: 81px;"><nobr>descartar seu texto use</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 2614px; left: 81px;"><nobr>:q!</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 2649px; left: 81px;"><nobr>que sai do vi sem salvar nenhuma alteração do arquivo sendo editado.</nobr></div>
+<div style="position: absolute; top: 2686px; left: 81px;"><nobr>Obviamente, todos esses comandos com ":" devem ser executados no modo de</nobr></div>
+<div style="position: absolute; top: 2707px; left: 81px;"><nobr>comando. Tentar utilizá-los no modo de edição os fará aparecer como parte do seu</nobr></div>
+<div style="position: absolute; top: 2728px; left: 81px;"><nobr>documento.</nobr></div>
+</span></font>
+<font face="Times" size="4"><span style="font-size: 28px; font-family: Times;">
+<div style="position: absolute; top: 2777px; left: 81px;"><nobr><b>Vamos dançar!</b></nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 2826px; left: 81px;"><nobr>Agora que você já sabe editar um texto, está na hora de ensiná-lo a segunda coisa</nobr></div>
+<div style="position: absolute; top: 2847px; left: 81px;"><nobr>mais confusa do vi: se movimentar pelo documento. Para aproveitar melhor essa</nobr></div>
+<div style="position: absolute; top: 2869px; left: 81px;"><nobr>lição, eu sugiro que você abra um documento já existente ou crie um novo e digite</nobr></div>
+<div style="position: absolute; top: 2890px; left: 81px;"><nobr>algumas linha nele. Certifique-se que você está no modo de comando teclando</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 2927px; left: 81px;"><nobr>ESC</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 2964px; left: 81px;"><nobr>algumas vezes quando tiver terminado.</nobr></div>
+<div style="position: absolute; top: 3000px; left: 81px;"><nobr>As teclas de movimento do vi são:</nobr></div>
+<div style="position: absolute; top: 3022px; left: 81px;"><nobr>h = esquerda,</nobr></div>
+<div style="position: absolute; top: 3043px; left: 81px;"><nobr>j = baixo,</nobr></div>
+<div style="position: absolute; top: 3064px; left: 81px;"><nobr>k = cima,</nobr></div>
+<div style="position: absolute; top: 3087px; left: 81px;"><nobr>l = direita.</nobr></div>
+<div style="position: absolute; top: 3123px; left: 81px;"><nobr>Em alguns consoles UNIX, também pode ser possível usar as setas do teclado para se</nobr></div>
+<div style="position: absolute; top: 3145px; left: 81px;"><nobr>movimentar pelo documento; entretanto, eu sugiro que você tente memorizar a lista</nobr></div>
+<div style="position: absolute; top: 3166px; left: 81px;"><nobr>acima pois elas vão funcionar em qualquer situação.</nobr></div>
+<div style="position: absolute; top: 3202px; left: 81px;"><nobr>Gostaria de se mover entre as palavras? Use</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 3241px; left: 81px;"><nobr>w</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 3276px; left: 81px;"><nobr>para mover uma palavra para frente, ou</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 3314px; left: 81px;"><nobr>b</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 3349px; left: 81px;"><nobr>para mover uma para trás.</nobr></div>
+<div style="position: absolute; top: 3385px; left: 81px;"><nobr>Para se mover entre parágrafos, use</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 3424px; left: 81px;"><nobr>{</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 3459px; left: 81px;"><nobr>e</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 3497px; left: 81px;"><nobr>}</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 3532px; left: 81px;"><nobr>O movimento entra sentenças requer o uso cuidadoso de</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 3569px; left: 81px;"><nobr>(</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 3606px; left: 81px;"><nobr>e</nobr></div>
+</span></font>
+
+<div style="position: absolute; top: 3739px; left: 0pt;"><hr><table border="0" width="100%"><tbody><tr><td align="right" bgcolor="#eeeeee"><font face="arial,sans-serif"><a name="4"><b>Page 4</b></a></font></td></tr></tbody></table></div><font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 3743px; left: 81px;"><nobr>)</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 3778px; left: 81px;"><nobr>Se você precisa se mover até uma linha específica do seu documento - linha 568, por</nobr></div>
+<div style="position: absolute; top: 3801px; left: 81px;"><nobr>exemplo - use esse comando:</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 3838px; left: 81px;"><nobr>:568</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 3874px; left: 81px;"><nobr>Para ir para o início do arquivo, digite</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 3911px; left: 81px;"><nobr>gg</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 3946px; left: 81px;"><nobr>e para o fim, somente</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 3985px; left: 81px;"><nobr>G [isso é shift+G]</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 4020px; left: 81px;"><nobr>E o vi também tem um equivalente a "Page Up e "Page Down". Use</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 4058px; left: 81px;"><nobr>^F [isso é ctrl+F]</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 4093px; left: 81px;"><nobr>para ir uma página a frente, e</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 4130px; left: 81px;"><nobr>^B [isso é ctrl+B]</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 4167px; left: 81px;"><nobr>para uma página atrás.</nobr></div>
+<div style="position: absolute; top: 4203px; left: 81px;"><nobr>Para saber a sua posição no documento, use</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 4241px; left: 81px;"><nobr>^G [isso é ctrl+G]</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 4276px; left: 81px;"><nobr>É claro que essas não são as únicas teclas de movimento - existem muitas outras. No</nobr></div>
+<div style="position: absolute; top: 4297px; left: 81px;"><nobr>entanto, por enquanto, essas devem ser suficientes para o seu próximo exercício.</nobr></div>
+</span></font>
+<font face="Times" size="4"><span style="font-size: 28px; font-family: Times;">
+<div style="position: absolute; top: 4346px; left: 81px;"><nobr><b>Cortar, Copiar, Colar...</b></nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 4395px; left: 81px;"><nobr>Agora vamos ver como apagar e copiar textos. Para apagar um único caractere,</nobr></div>
+<div style="position: absolute; top: 4416px; left: 81px;"><nobr>posicione o curso sob ele, certifique-se que você está no modo de comando, e tecle</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 4454px; left: 81px;"><nobr>x</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 4489px; left: 81px;"><nobr>para apagá-lo. Para apagar uma palavra, tecle</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 4526px; left: 81px;"><nobr>dw</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 4563px; left: 81px;"><nobr>que é a abreviação de "delete word" (apagar palavra). Para apagar uma linha inteira</nobr></div>
+<div style="position: absolute; top: 4584px; left: 81px;"><nobr>use</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 4622px; left: 81px;"><nobr>dd</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 4657px; left: 81px;"><nobr>Já escritores com bloqueio criativo vão apreciar a rapidez dos comandos</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 4694px; left: 81px;"><nobr>dgg</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 4731px; left: 81px;"><nobr>e</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 4768px; left: 81px;"><nobr>dG</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 4804px; left: 81px;"><nobr>que apagam tudo da posição corrente do cursor até o começo e fim do arquivo</nobr></div>
+</span></font>
+
+<div style="position: absolute; top: 4927px; left: 0pt;"><hr><table border="0" width="100%"><tbody><tr><td align="right" bgcolor="#eeeeee"><font face="arial,sans-serif"><a name="5"><b>Page 5</b></a></font></td></tr></tbody></table></div><font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 4930px; left: 81px;"><nobr>respectivamente.</nobr></div>
+<div style="position: absolute; top: 4966px; left: 81px;"><nobr>Oops... você não usou esses dois, não é? Não tem problema, o vi também possui</nobr></div>
+<div style="position: absolute; top: 4989px; left: 81px;"><nobr>um comando de "undo" (desfazer) muito útil, que pode ser usado teclando</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 5026px; left: 81px;"><nobr>u</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 5062px; left: 81px;"><nobr>sempre que você precisar desfazer algum engano. E é claro, junto com o undo temos</nobr></div>
+<div style="position: absolute; top: 5083px; left: 81px;"><nobr>o comando de "redo" (refazer), que permite repitir ações passadas. Basta teclar</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 5120px; left: 81px;"><nobr>. [isso mesmo, um ponto]</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 5157px; left: 81px;"><nobr>Quando você apaga alguma coisa no vi, o texto apagado geralmente vai parar num</nobr></div>
+<div style="position: absolute; top: 5178px; left: 81px;"><nobr>buffer temporário na memória, aonde ele fica até ser substituído. Esse texto pode ser</nobr></div>
+<div style="position: absolute; top: 5200px; left: 81px;"><nobr>re-inserido no seu documento com o comando de "put" (colocar). Se você estiver</nobr></div>
+<div style="position: absolute; top: 5221px; left: 81px;"><nobr>acompanhando tudo já deve imaginar que o comando de "put" é acessado com</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 5258px; left: 81px;"><nobr>p</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 5295px; left: 81px;"><nobr>Vamos lá, tente. Apague uma linha, mova o cursor para um novo parágrafo e a</nobr></div>
+<div style="position: absolute; top: 5316px; left: 81px;"><nobr>coloque em outro lugar. Simples, e equivalente à funcionalidade cortar e colar que</nobr></div>
+<div style="position: absolute; top: 5338px; left: 81px;"><nobr>existe em outros editores.</nobr></div>
+<div style="position: absolute; top: 5374px; left: 81px;"><nobr>Caso você queira inserir o texto apagado acima da posição atual do cursor,</nobr></div>
+<div style="position: absolute; top: 5395px; left: 81px;"><nobr>simplesmente use</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 5434px; left: 81px;"><nobr>P</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 5469px; left: 81px;"><nobr>ao invés de</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 5507px; left: 81px;"><nobr>p</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 5542px; left: 81px;"><nobr>E quanto a copiar e colar? Também é muito fácil: o vi usa o comando "yank" para</nobr></div>
+<div style="position: absolute; top: 5563px; left: 81px;"><nobr>copiar um texto de uma forma bem similar ao comando de apagar. Para copiar uma</nobr></div>
+<div style="position: absolute; top: 5586px; left: 81px;"><nobr>palavra, use</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 5623px; left: 81px;"><nobr>yw</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 5659px; left: 81px;"><nobr>Já</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 5696px; left: 81px;"><nobr>yy</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 5731px; left: 81px;"><nobr>copia uma linha inteira e a coloca no buffer temporário, pronta para ser colocada em</nobr></div>
+<div style="position: absolute; top: 5754px; left: 81px;"><nobr>outro lugar.</nobr></div>
+</span></font>
+<font face="Times" size="4"><span style="font-size: 28px; font-family: Times;">
+<div style="position: absolute; top: 5801px; left: 81px;"><nobr><b>Um, dois, três...</b></nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 5850px; left: 81px;"><nobr>Uma das funções mais poderosas do vi é repetir automaticamente um comando um</nobr></div>
+<div style="position: absolute; top: 5872px; left: 81px;"><nobr>número específico de vezes, bastando preceder o comando com um número. Por</nobr></div>
+<div style="position: absolute; top: 5893px; left: 81px;"><nobr>exemplo, suponha que você precisa apagar oito linhas de um documento. Baseado no</nobr></div>
+<div style="position: absolute; top: 5914px; left: 81px;"><nobr>que você já aprendeu, você usaria o comando</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 5953px; left: 81px;"><nobr>dd</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 5988px; left: 81px;"><nobr>oito vezes, criando essa linha de comando horrivelmente grotesca:</nobr></div>
+</span></font>
+
+<div style="position: absolute; top: 6115px; left: 0pt;"><hr><table border="0" width="100%"><tbody><tr><td align="right" bgcolor="#eeeeee"><font face="arial,sans-serif"><a name="6"><b>Page 6</b></a></font></td></tr></tbody></table></div><font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 6119px; left: 81px;"><nobr>dddddddddddddddd</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 6154px; left: 81px;"><nobr>O que você poderia ter feito, caso eu já tivesse dito, era</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 6193px; left: 81px;"><nobr>8dd</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 6228px; left: 81px;"><nobr>Como você verá ao usá-lo, esse comando simplesmente executa o comando "dd"</nobr></div>
+<div style="position: absolute; top: 6250px; left: 81px;"><nobr>oito vezes, apagando oito linhas do documento sem que você precise ir a uma</nobr></div>
+<div style="position: absolute; top: 6271px; left: 81px;"><nobr>farmácia comprar uma aspirina depois. E essa técnica pode ser usada com quaisquer</nobr></div>
+<div style="position: absolute; top: 6292px; left: 81px;"><nobr>dos comandos que você já aprendeu: você pode utilizá-la para copiar múltiplas</nobr></div>
+<div style="position: absolute; top: 6315px; left: 81px;"><nobr>linhas, repetir inserções um número específico de vezes, e até mesmo mover o cursor</nobr></div>
+<div style="position: absolute; top: 6336px; left: 81px;"><nobr>para ocorrências específicas de palavras no documento.</nobr></div>
+</span></font>
+<font face="Times" size="4"><span style="font-size: 28px; font-family: Times;">
+<div style="position: absolute; top: 6385px; left: 81px;"><nobr><b>Procurando por hope</b></nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 6433px; left: 81px;"><nobr>O vi também possui funcionalidades de busca e substituição bastante poderosas, que</nobr></div>
+<div style="position: absolute; top: 6454px; left: 81px;"><nobr>podem se acessadas com os comandos / e ?.</nobr></div>
+<div style="position: absolute; top: 6490px; left: 81px;"><nobr>Digamos que você escreveu um tratado sobre o papel interpretado por Mark Hamil</nobr></div>
+<div style="position: absolute; top: 6513px; left: 81px;"><nobr>em "Star Wars: A New Hope" (Guerra nas Estrelas: Uma Nova Esperança) - mas, ao</nobr></div>
+<div style="position: absolute; top: 6534px; left: 81px;"><nobr>revisar o seu documento, você vê que digitou erroneamente a palavra "hope"</nobr></div>
+<div style="position: absolute; top: 6556px; left: 81px;"><nobr>(esperança) como "dope" (narcótico) em diferentes locais do texto. Obviamente você</nobr></div>
+<div style="position: absolute; top: 6577px; left: 81px;"><nobr>não pode ignorar esse erro: isso levaria a uma interpretação completamente nova do</nobr></div>
+<div style="position: absolute; top: 6598px; left: 81px;"><nobr>filme de ficção-científica mais querido do planeta. O que você faz?</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 6637px; left: 81px;"><nobr>/dope</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 6672px; left: 81px;"><nobr>O comando /padrão diz ao vi para procurar o documento pelo padrão especificado;</nobr></div>
+<div style="position: absolute; top: 6694px; left: 81px;"><nobr>ao encontrá-lo, ele vai posicionar o cursor no primeiro caractere da palavra, e</nobr></div>
+<div style="position: absolute; top: 6715px; left: 81px;"><nobr>aguardar novos comandos.</nobr></div>
+<div style="position: absolute; top: 6751px; left: 81px;"><nobr>Para buscar para trás, use o comando ?padrão, assim:</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 6790px; left: 81px;"><nobr>?dope</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 6825px; left: 81px;"><nobr>É improvável, até mesmo tolice da sua parte, assumir que esse erro só ocorreu uma</nobr></div>
+<div style="position: absolute; top: 6847px; left: 81px;"><nobr>vez. Você pode repertir a última busca pressionando</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 6884px; left: 81px;"><nobr>n</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 6919px; left: 81px;"><nobr>ou, na língua do vi, "next match" (próxima ocorrência).</nobr></div>
+<div style="position: absolute; top: 6957px; left: 81px;"><nobr>Não é suficiente somente identificar o seu erro. O próximo passo, conforme a</nobr></div>
+<div style="position: absolute; top: 6978px; left: 81px;"><nobr>maioria das doutrinas religiosas e pastores da televisão, é consertá-lo e se certificar</nobr></div>
+<div style="position: absolute; top: 7000px; left: 81px;"><nobr>de que ele não vai acontecer de novo. O vi também pode ajudá-lo nisso também,</nobr></div>
+<div style="position: absolute; top: 7021px; left: 81px;"><nobr>ainda que isso involva memorizar um comando que, a primeira vista, provavelmente</nobr></div>
+<div style="position: absolute; top: 7042px; left: 81px;"><nobr>vai te deixar perguntando se Deus existe mesmo...</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 7081px; left: 81px;"><nobr>:1,$s/padrão_a_encontrar/padrão_para_substituir/g</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 7116px; left: 81px;"><nobr>No caso de você estar se perguntando de onde o "s" veio, é a abreviação do</nobr></div>
+<div style="position: absolute; top: 7138px; left: 81px;"><nobr>comando "substituir". O 1 e o $ são os símbolos que indicam a faixa onde a</nobr></div>
+<div style="position: absolute; top: 7159px; left: 81px;"><nobr>substituição deve ocorrer - nesse caso, do início do documento [linha 1] até o fim</nobr></div>
+<div style="position: absolute; top: 7180px; left: 81px;"><nobr>[$]. O "g" é um flag que indica que todas as ocorrências devem ser substituídas.</nobr></div>
+</span></font>
+
+<div style="position: absolute; top: 7303px; left: 0pt;"><hr><table border="0" width="100%"><tbody><tr><td align="right" bgcolor="#eeeeee"><font face="arial,sans-serif"><a name="7"><b>Page 7</b></a></font></td></tr></tbody></table></div><font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 7306px; left: 81px;"><nobr>Logo, no exemplo acima, o comando para substituir a palavra "dope" por "hope" é</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 7343px; left: 81px;"><nobr>:1,$s/dope/hope/g</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 7380px; left: 81px;"><nobr>Se pelo menos conseguir o número do telefone da Leia fosse tão fácil assim...</nobr></div>
+</span></font>
+<font face="Times" size="4"><span style="font-size: 28px; font-family: Times;">
+<div style="position: absolute; top: 7427px; left: 81px;"><nobr><b>Bookmarks, Buffers...</b></nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 7476px; left: 81px;"><nobr>O vi também permite que você defina "bookmarks" (marcadores) no seu documento</nobr></div>
+<div style="position: absolute; top: 7498px; left: 81px;"><nobr>para facilitar o salto entre seções específicas de arquivos grandes. Como um exemplo,</nobr></div>
+<div style="position: absolute; top: 7519px; left: 81px;"><nobr>considere os seguintes blocos de texto:</nobr></div>
+<div style="position: absolute; top: 7555px; left: 81px;"><nobr>...este documento delineia uma proposta para a estrutura corporativa da Carros</nobr></div>
+<div style="position: absolute; top: 7578px; left: 81px;"><nobr>Potentes Ltda, uma companhia no negócio de produção e venda... [página 2]</nobr></div>
+<div style="position: absolute; top: 7614px; left: 81px;"><nobr>...o presidente da Carros Potentes Ltda, James van Hausen, que, em sua adolescência</nobr></div>
+<div style="position: absolute; top: 7636px; left: 81px;"><nobr>desvairada, era muito conhecido por derrubar árvores usando caríssimos carros</nobr></div>
+<div style="position: absolute; top: 7657px; left: 81px;"><nobr>esporte, conseguiu... [página 137]</nobr></div>
+<div style="position: absolute; top: 7693px; left: 81px;"><nobr>E então, vamos colocar alguns bookmarks? Na página 2, mova o cursor até a</nobr></div>
+<div style="position: absolute; top: 7716px; left: 81px;"><nobr>palavra "documento", e digite</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 7753px; left: 81px;"><nobr>ma</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 7789px; left: 81px;"><nobr>Isso coloca um bookmark, identificado pela letra "a", na posição do cursor. Agora vá</nobr></div>
+<div style="position: absolute; top: 7810px; left: 81px;"><nobr>até a página 137 e adicione um bookmark chamado "b" na palavra "carros". Para</nobr></div>
+<div style="position: absolute; top: 7831px; left: 81px;"><nobr>voltar para a página 2, tudo que você precisa fazer é digitar</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 7870px; left: 81px;"><nobr>‘a</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 7905px; left: 81px;"><nobr>e para chegar à página 137, simplesmente digite</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 7943px; left: 81px;"><nobr>‘b</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 7978px; left: 81px;"><nobr>Qualquer letra minúscula pode ser usada como um identificador de bookmark.</nobr></div>
+<div style="position: absolute; top: 7999px; left: 81px;"><nobr>Obviamente, você está limitado a um total de 26 bookmarks por arquivo - mas, na</nobr></div>
+<div style="position: absolute; top: 8022px; left: 81px;"><nobr>maoiria das vezes, isso é mais que suficiente. Se você precisar de mais que isso eu</nobr></div>
+<div style="position: absolute; top: 8043px; left: 81px;"><nobr>sugiro fortemente que você faça terapia.</nobr></div>
+<div style="position: absolute; top: 8080px; left: 81px;"><nobr>Além dos múltiplos bookmarks, o vi também possui múltiplos buffers. Se você</nobr></div>
+<div style="position: absolute; top: 8101px; left: 81px;"><nobr>esteve prestando atenção, sabe que todo o material que você apaga ou copia vai para</nobr></div>
+<div style="position: absolute; top: 8122px; left: 81px;"><nobr>um buffer temporário até ser substituído ou removido. Mas o vi também possui</nobr></div>
+<div style="position: absolute; top: 8145px; left: 81px;"><nobr>"buffers com nome" - como se fossem armários, esses buffers podem ser usados para</nobr></div>
+<div style="position: absolute; top: 8166px; left: 81px;"><nobr>guardar diferentes blocos de texto, deixando-os disponíveis para inserção aonde</nobr></div>
+<div style="position: absolute; top: 8188px; left: 81px;"><nobr>forem necessários.</nobr></div>
+<div style="position: absolute; top: 8224px; left: 81px;"><nobr>Como um exemplo, dê uma olhada nesse pedaço de um texto que me foi entregue por</nobr></div>
+<div style="position: absolute; top: 8245px; left: 81px;"><nobr>uma de minhas ex-alunas:</nobr></div>
+<div style="position: absolute; top: 8283px; left: 81px;"><nobr>...coelinhas (N.T.: da Playboy americana) parecem ter uma vida muito boa. Tudo o</nobr></div>
+<div style="position: absolute; top: 8304px; left: 81px;"><nobr>que elas fazem é ficar na praia, bebendo pina coladas e passando bronzeador. De vez</nobr></div>
+<div style="position: absolute; top: 8326px; left: 81px;"><nobr>em quando, elas se levantam e jogam um pouco de voleyball. Parece divertido - aonde</nobr></div>
+<div style="position: absolute; top: 8347px; left: 81px;"><nobr>eu assino?...</nobr></div>
+<div style="position: absolute; top: 8383px; left: 81px;"><nobr>Tenho certeza que vocês entendem porque eu falei "ex-aluna"...</nobr></div>
+</span></font>
+
+<div style="position: absolute; top: 8491px; left: 0pt;"><hr><table border="0" width="100%"><tbody><tr><td align="right" bgcolor="#eeeeee"><font face="arial,sans-serif"><a name="8"><b>Page 8</b></a></font></td></tr></tbody></table></div><font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 8494px; left: 81px;"><nobr>Agora vamos supor que eu quisesse trocar de posição as frases "bebendo pina</nobr></div>
+<div style="position: absolute; top: 8515px; left: 81px;"><nobr>coladas" e "passando bronzeador". Isso é o que eu faria:</nobr></div>
+<div style="position: absolute; top: 8553px; left: 81px;"><nobr>1. Mover o cursor para o começo da palavra "bebendo"</nobr></div>
+<div style="position: absolute; top: 8589px; left: 81px;"><nobr>2. Apagar as três palavras e movê-las para um buffer chamdo "p"</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 8627px; left: 81px;"><nobr>"p3dw</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 8662px; left: 81px;"><nobr>3. Mover o cursor para o começo da palavra "passando"</nobr></div>
+<div style="position: absolute; top: 8698px; left: 81px;"><nobr>4. Apagar essas duas palavras e movê-las para um buffer chamado "s"</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 8737px; left: 81px;"><nobr>"s2dw</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 8772px; left: 81px;"><nobr>5. Mover o cursor de volta para antes da palavra "e"</nobr></div>
+<div style="position: absolute; top: 8809px; left: 81px;"><nobr>6. Inserir o conteúdo do buffer "s"</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 8846px; left: 81px;"><nobr>"sp</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 8881px; left: 81px;"><nobr>7. Mover o cursor para depois da palavra "e"</nobr></div>
+<div style="position: absolute; top: 8919px; left: 81px;"><nobr>8. Inserir o conteúdo do buffer "p"</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 8956px; left: 81px;"><nobr>"pp</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 8992px; left: 81px;"><nobr>9. Me parabenizar espalhafatosamente, como eu estou fazendo agora!</nobr></div>
+<div style="position: absolute; top: 9028px; left: 81px;"><nobr>Como você pode ver, para usar um buffer, basta preceder o comando normal de</nobr></div>
+<div style="position: absolute; top: 9049px; left: 81px;"><nobr>copiar/apagar/substituir com o identificador do buffer. Um identificador de buffer</nobr></div>
+<div style="position: absolute; top: 9072px; left: 81px;"><nobr>consiste de uma aspas dupla seguida por uma letra minúscula. No exemplo acima,</nobr></div>
+<div style="position: absolute; top: 9093px; left: 81px;"><nobr>tanto "s quanto "p são identificadores de buffers.</nobr></div>
+<div style="position: absolute; top: 9130px; left: 81px;"><nobr>Devo lembrá-los aqui que nem os bookmarks, nem os buffers são mantidos quando</nobr></div>
+<div style="position: absolute; top: 9151px; left: 81px;"><nobr>você sai do editor.</nobr></div>
+</span></font>
+<font face="Times" size="4"><span style="font-size: 28px; font-family: Times;">
+<div style="position: absolute; top: 9199px; left: 81px;"><nobr><b>Sobre arquivos e janelas</b></nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 9247px; left: 81px;"><nobr>Você já viu que</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 9286px; left: 81px;"><nobr>$ vi nome_do_arquivo</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 9321px; left: 81px;"><nobr>inicia o vi com o arquivo especificado já carregado. Mas por que se restringir a um?</nobr></div>
+<div style="position: absolute; top: 9343px; left: 81px;"><nobr>Você pode carregar múltiplos arquivos desta forma:</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 9380px; left: 81px;"><nobr>$ vi arquivo1 arquivo2 arquivo3</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 9415px; left: 81px;"><nobr>Para alternar entre os arquivos use esses comandos:</nobr></div>
+<div style="position: absolute; top: 9438px; left: 81px;"><nobr>:next = vai para o próximo arquivo na lista</nobr></div>
+<div style="position: absolute; top: 9459px; left: 81px;"><nobr>:rewind = vai para o primeiro arquivo na lista</nobr></div>
+<div style="position: absolute; top: 9481px; left: 81px;"><nobr>:last = vai para o último arquivo na lista</nobr></div>
+<div style="position: absolute; top: 9517px; left: 81px;"><nobr>Para sair de todos os arquivos de uma vez use:</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 9554px; left: 81px;"><nobr>:qa!</nobr></div>
+</span></font>
+
+<div style="position: absolute; top: 9679px; left: 0pt;"><hr><table border="0" width="100%"><tbody><tr><td align="right" bgcolor="#eeeeee"><font face="arial,sans-serif"><a name="9"><b>Page 9</b></a></font></td></tr></tbody></table></div><font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 9682px; left: 81px;"><nobr>para sair sem salvar, ou</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 9719px; left: 81px;"><nobr>:wqa</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 9756px; left: 81px;"><nobr>para salvar todas as alterações e sair.</nobr></div>
+<div style="position: absolute; top: 9792px; left: 81px;"><nobr>Após já ter iniciado o vi, você pode carregar um novo arquivo no editor com o</nobr></div>
+<div style="position: absolute; top: 9814px; left: 81px;"><nobr>comando "editar", assim:</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 9851px; left: 81px;"><nobr>:e /caminho/para/arquivo.txt</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 9886px; left: 81px;"><nobr>Se você preferir inserir o conteúdo de outro arquivo diretamente no documento que</nobr></div>
+<div style="position: absolute; top: 9909px; left: 81px;"><nobr>você está editando agora existe um comando de leitura "read" feito justamente para</nobr></div>
+<div style="position: absolute; top: 9930px; left: 81px;"><nobr>isso. Tente:</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 9968px; left: 81px;"><nobr>:read /caminho/para/arquivo_a_ser_inserido.txt</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 10003px; left: 81px;"><nobr>Se você é um programador, definivamente vai gostar da funcionalidade do vi de te</nobr></div>
+<div style="position: absolute; top: 10024px; left: 81px;"><nobr>mostrar múltiplas visões do mesmo arquivo, que no jargão computacional é</nobr></div>
+<div style="position: absolute; top: 10047px; left: 81px;"><nobr>chamado de "window splitting" (divisão de janelas). E o comando é, naturalmente</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 10084px; left: 81px;"><nobr>:split</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 10120px; left: 81px;"><nobr>Cada uma das janelas criadas pode ser manipulada de forma independente das outras,</nobr></div>
+<div style="position: absolute; top: 10141px; left: 81px;"><nobr>apesar das mudanças feitas no arquivo ficarem imediatamente visíveis em todas elas.</nobr></div>
+<div style="position: absolute; top: 10177px; left: 81px;"><nobr>Vamos avançar um pouco mais. Que tal carregar arquivos diferentes em cada uma das</nobr></div>
+<div style="position: absolute; top: 10200px; left: 81px;"><nobr>janelas? Por exemplo, não seria ótimo se você pudesse carregar um arquivos HTML</nobr></div>
+<div style="position: absolute; top: 10221px; left: 81px;"><nobr>em uma, um script CGI associado em outra, alguma documentação de ajuda numa</nobr></div>
+<div style="position: absolute; top: 10243px; left: 81px;"><nobr>terceira e ter todas as três visíveis ao mesmo tempo?</nobr></div>
+<div style="position: absolute; top: 10279px; left: 81px;"><nobr>Bem, você pode. Basta usar o comando "new" (novo) para criar uma nova janela para</nobr></div>
+<div style="position: absolute; top: 10300px; left: 81px;"><nobr>cada um dos arquivos, assim:</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 10339px; left: 81px;"><nobr>:new form.html</nobr></div>
+<div style="position: absolute; top: 10375px; left: 81px;"><nobr>:new mailform.cgi</nobr></div>
+<div style="position: absolute; top: 10412px; left: 81px;"><nobr>:new help.txt</nobr></div>
+</span></font>
+<font face="Times" size="3"><span style="font-size: 19px; font-family: Times;">
+<div style="position: absolute; top: 10447px; left: 81px;"><nobr>Para alternar entre as janelas, use</nobr></div>
+</span></font>
+<font face="Courier" size="3"><span style="font-size: 19px; font-family: Courier;">
+<div style="position: absolute; top: 10484px; left: 81px;"><nobr>^W W [isso é ctrl-W seguido por um W]</nobr></div>
+</span></font>
+
+</div></body></html>

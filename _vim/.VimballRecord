@@ -1,0 +1,2 @@
+haskellmode.vba: call delete('/home/mailson/.vim/compiler/ghc.vim')|call delete('/home/mailson/.vim/ftplugin/haskell.vim')|call delete('/home/mailson/.vim/ftplugin/haskell_doc.vim')|call delete('/home/mailson/.vim/ftplugin/haskell_hpaste.vim')|call delete('/home/mailson/.vim/autoload/haskellmode.vim')|call delete('/home/mailson/.vim/doc/haskellmode.txt')
+tcomment.vba: call delete('/home/mailson/.vim/doc/tcomment.txt')|call delete('/home/mailson/.vim/plugin/tcomment.vim')|call delete('/home/mailson/.vim/autoload/tcomment.vim')

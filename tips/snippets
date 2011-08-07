@@ -1,0 +1,69 @@
+:dig - lista os dígrafos
+Ctrl+K a b -> faz o dígrafo juntando ab. se b for *, letra no alfabeto grego. se for =, cirílico
+:set digraph -> dá pra fazer um dígrafo digitando a backspace b. eg: -<BackSpace>o -> º
+:set nu - coloca o # das linhas
+:set ai - autoident
+Ctrl+N - Completa a palavra
+Ctrl+X, N - Completa a próxima palavra
+Ctrl+O -> sai do modo de inserção, executa um comando e volta ao modo de inserção
+/<C-R><C-W> -> busca pela palavra que está no cursor
+* -> idem (# o mesmo, mas vai de trás para frente)
+/fulano\|sicrano -> busca por fulano ou sicrano
+Ctrl+A, Ctrl+X -> incrementa, decrementa um inteiro (insertion mode)
+
+"+yy -> copia (ctr+c) para o clipboard
+"*yy -> copia para o clipboard de selecao
+"+p -> cola (ctrl+v) / (INSERTION MODE) CTRL-R +
+"*p -> cola (middle click) / (INSERTION MODE) CTRL-R *
+D -> deleta até o fim da linha (dd deleta a linha toda, inclusive o caractere de quebra de linha)
+
+Block selection
+Ctrl+V - Block selection
+I - Insere algo no bloco e se repete nas outras linhas. Ex: Ctrl+V a primeira coluna, dê I e depois digite #. Pronto, as linhas selecionadas estarão todas comentadas
+c - Faz algo parecido com o I, mas ao invés de adicionar caracteres, ele substitui os existentes pelos digitados
+
+== Seleção ==
+= -> identa codigo
+gq -> alinha com a largura especificada
+
+== Pulos  ==
+gf -> abre o arquivo em baixo do cursor
+5G -> vai para a linha 
+
+== Formato do arquivo ==
+Convertendo para o formato unix
+:set fileformat=unix
+:write
+
+:filetype detect -> detecta a linguagem de um arquivo recém criado
+
+== .vimrc ==
+filetype plugin indent on -> usa os plugins das linguagens e faz uma identação inteligente
+
+== Arquivos binários ==
+vim -b data.bin
+:set display=uhex
+:set nowrap
+
+ga -> mostra o caractere do cursor nas bases 10, 8 e 16
+g ^G -> mostra posição atual. incluisive o byte atual
+2345go -> vai para o byte 2345
+
+:%!xxd -> exibe no formato de editor hexadecimal
+:%!xxd -r -> volta ao modo normal
+
+:helptags ~/.vim/doc -> recria as helptags
+
+== Conversao de formato ==
+dos -> unix
+:update
+:e ++ff=dos
+:setlocal ff=unix
+:w
+
+unix -> dos
+:update
+:e ++ff=dos
+:w
+
+http://vim.wikia.com/wiki/File_format
