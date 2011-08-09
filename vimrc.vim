@@ -117,6 +117,10 @@ map <C-Right> gt
 
 map ,n :call ShowNumberStatus()<CR>
 
+" You don't need to open a protected file with sudo vim anymore.
+" Just type :wsudo and the file will be saved.
+cab wsudo w !sudo tee %
+
 """"""""""""""""""""""""""""""""""""""""
 " Funções                              "
 """"""""""""""""""""""""""""""""""""""""
