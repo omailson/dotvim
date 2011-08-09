@@ -30,6 +30,12 @@ gq -> alinha com a largura especificada
 gf -> abre o arquivo em baixo do cursor
 5G -> vai para a linha 
 
+== vimdiff ==
+do -> get changes from other window into the current window
+dp -> put changes from current window into the other window
+]c -> next change
+[c -> previous change
+
 == Formato do arquivo ==
 Convertendo para o formato unix
 :set fileformat=unix
