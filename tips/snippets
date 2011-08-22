@@ -22,6 +22,10 @@ Ctrl+V - Block selection
 I - Insere algo no bloco e se repete nas outras linhas. Ex: Ctrl+V a primeira coluna, dê I e depois digite #. Pronto, as linhas selecionadas estarão todas comentadas
 c - Faz algo parecido com o I, mas ao invés de adicionar caracteres, ele substitui os existentes pelos digitados
 
+== Command line ==
+vim -p path/*.cpp -> abrir varios arquivos em abas
+vim arquivo.cpp +15 -> abre na linha 15
+
 == Seleção ==
 = -> identa codigo
 gq -> alinha com a largura especificada
