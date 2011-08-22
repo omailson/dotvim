@@ -92,9 +92,9 @@ map ,= "+
 map 0 ^
 
 " problema do meu teclado
-imap m<BackSpace> ,
-imap M<BackSpace> <
-imap ,<BackSpace> .
+" imap m<BackSpace> ,
+" imap M<BackSpace> <
+" imap ,<BackSpace> .
 " imap <BS> //  if getline('.')[col('.') - 1] ==? 'm'
 
 " Wordwise Ctrl-Y in insert mode
