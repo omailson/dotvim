@@ -187,3 +187,10 @@ endif
 """"""""""""""""""""""""""""""""""""""""
 au FileType python setlocal softtabstop=4
 au FileType python setlocal expandtab
+
+""""""""""""""""""""""""""""""""""""""""
+" QML                                  "
+""""""""""""""""""""""""""""""""""""""""
+au BufRead,BufNewFile *.qml setfiletype javascript
+au BufRead,BufNewFile *.qml map <F6> :!qmlviewer % <Enter>
+
