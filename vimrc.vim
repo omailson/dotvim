@@ -114,6 +114,8 @@ map <S-F2> :NERDTreeFind<CR>
 " Trocar de aba
 map <C-Left> gT
 map <C-Right> gt
+inoremap <C-Left> <Esc>gT
+inoremap <C-Left> <Esc>gt
 
 map ,n :call ShowNumberStatus()<CR>
 
