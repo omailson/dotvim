@@ -115,7 +115,7 @@ map <S-F2> :NERDTreeFind<CR>
 map <C-Left> gT
 map <C-Right> gt
 inoremap <C-Left> <Esc>gT
-inoremap <C-Left> <Esc>gt
+inoremap <C-Right> <Esc>gt
 
 map ,n :call ShowNumberStatus()<CR>
 
