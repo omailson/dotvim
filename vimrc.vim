@@ -8,6 +8,8 @@ set mouse=a       " usa o mouse em qualquer lugar. seleção visual do vim com o
 set showcmd       " mostra o comando digitado (eg: digitando :set filetype neste arquivo, mostra filetype=vim)
 set wildmenu      " no modo de comando, ao teclar TAB, completa o que foi escrito mostrando as opções em um menu
 set number        " mostra os numeros das linhas
+set exrc          " enable per-directory .vimrc files
+set secure        " disable unsafe commands in local .vimrc files
 
 " peaksea colorscheme
 if ! has("gui_running")
