@@ -10,6 +10,7 @@ set wildmenu      " no modo de comando, ao teclar TAB, completa o que foi escrit
 set number        " mostra os numeros das linhas
 set exrc          " enable per-directory .vimrc files
 set secure        " disable unsafe commands in local .vimrc files
+set cursorline    " highlight line under cursor
 
 " peaksea colorscheme
 if ! has("gui_running")
@@ -54,6 +55,7 @@ set hlsearch
 " Mudando a cor de destaque dos () [] {}. A cor cyan é muito chegay
 " highlight MatchParen ctermbg=red guibg=magenta
 " highlight Search ctermbg=brown ctermfg=white
+highlight CursorLine cterm=NONE ctermbg=black gui=NONE guibg=#001100
 
 " Acho que é para gravar marcas, registradores e afins.
 " E a segunda linha é para deixar o cursor na posição que estava da última vez
