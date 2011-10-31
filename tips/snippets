@@ -22,6 +22,20 @@ Ctrl+V - Block selection
 I - Insere algo no bloco e se repete nas outras linhas. Ex: Ctrl+V a primeira coluna, dê I e depois digite #. Pronto, as linhas selecionadas estarão todas comentadas
 c - Faz algo parecido com o I, mas ao invés de adicionar caracteres, ele substitui os existentes pelos digitados
 
+== Comandos do Insert Mode ==
+Ctrl+T -> Indenta+1
+Ctrl+D -> Indenta-1
+Ctrl+R[0-9a-z*+] -> Coloca o que está no registrador
+
+== Dígrafos ==
+:dig - lista os dígrafos
+Ctrl+K a b -> faz o dígrafo juntando ab. se b for *, letra no alfabeto grego. se for =, cirílico
+:set digraph -> dá pra fazer um dígrafo digitando a backspace b. eg: -<BackSpace>o -> º
+
+a* -> grego
+a= -> cirílico
+12 -> ½
+
 == Command line ==
 vim -p path/*.cpp -> abrir varios arquivos em abas
 vim arquivo.cpp +15 -> abre na linha 15
