@@ -13,6 +13,16 @@ set secure        " disable unsafe commands in local .vimrc files
 set cursorline    " highlight line under cursor
 syntax on
 
+" vim beginners mode: disables arrow keys so you can get used to hjkl.
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
 " peaksea colorscheme
 if ! has("gui_running")
 	set t_Co=256
