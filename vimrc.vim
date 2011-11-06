@@ -58,8 +58,7 @@ if has("gui_running")
 endif
 
 
-set listchars=tab:>-,trail:.,nbsp:%,eol:$,extends:>,precedes:< " configuração do list. digite :set list para ver alguns caracteres não imprimíveis
-
+set listchars=tab:▸\ ,trail:·,nbsp:%,eol:¬,extends:→,precedes:← " configuração do list. digite :set list para ver alguns caracteres não imprimíveis
 " set expandtab " Usa espaço ao invés de TAB
 " set noexpandtab " Desativa o expandtab
 
