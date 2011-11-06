@@ -1,4 +1,4 @@
-syntax on
+set nocompatible  " not compatible to Vi
 set tabstop=4     " quantos colunas um tab vai ter (apertando a tecla TAB)
 set shiftwidth=4  " idem, mas é usando >> ou <<
 set autoindent    " indentação automática
@@ -11,6 +11,7 @@ set number        " mostra os numeros das linhas
 set exrc          " enable per-directory .vimrc files
 set secure        " disable unsafe commands in local .vimrc files
 set cursorline    " highlight line under cursor
+syntax on
 
 " peaksea colorscheme
 if ! has("gui_running")
