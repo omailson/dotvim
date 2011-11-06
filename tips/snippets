@@ -10,6 +10,7 @@ Ctrl+O -> sai do modo de inserção, executa um comando e volta ao modo de inser
 * -> idem (# o mesmo, mas vai de trás para frente)
 /fulano\|sicrano -> busca por fulano ou sicrano
 Ctrl+A, Ctrl+X -> incrementa, decrementa um inteiro (insertion mode)
+:messages -> mostra as messagens anteriores que aparecem na statusbar
 
 "+yy -> copia (ctr+c) para o clipboard
 "*yy -> copia para o clipboard de selecao
