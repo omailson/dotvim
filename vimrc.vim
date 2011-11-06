@@ -7,7 +7,7 @@ set smartcase     " exceto quando buscamos por um termo em maiúscula
 set mouse=a       " usa o mouse em qualquer lugar. seleção visual do vim com o mouse
 set showcmd       " mostra o comando digitado (eg: digitando :set filetype neste arquivo, mostra filetype=vim)
 set wildmenu      " no modo de comando, ao teclar TAB, completa o que foi escrito mostrando as opções em um menu
-set number        " mostra os numeros das linhas
+set relativenumber  " show line number relative to current position
 set exrc          " enable per-directory .vimrc files
 set secure        " disable unsafe commands in local .vimrc files
 set cursorline    " highlight line under cursor
