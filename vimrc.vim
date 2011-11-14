@@ -103,7 +103,10 @@ iab /* /*<Space>*/<Left><Left><Left>
 """"""""""""""""""""""""""""""""""""""""
 " Inserir uma linha abaixo do cursor e continuar no modo normal
 map ,o o<Esc>
+map <Return> o<Esc>k
 map ,O O<Esc>
+map OM O<Esc>
+" The above mapping is a <S-Return>
 
 " ?? muito chato digitar ''+p para colar texto da área de transferência
 " + é Shift+=, mas ter que apertar o shift é dose. Por isso o =
