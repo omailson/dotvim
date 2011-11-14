@@ -18,7 +18,7 @@ import vim
 import re
 from xmlrpclib import ServerProxy
 
-host = 'paste.pocoo.org'
+host = '10.60.5.222:8081'
 
 srv = ServerProxy('http://%s/xmlrpc/'  % (host, ), allow_none=True)
 
