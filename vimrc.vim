@@ -21,14 +21,20 @@ else
 endif
 
 " vim beginners mode: disables arrow keys so you can get used to hjkl.
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
 inoremap <up> <nop>
 inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+" Shortcuts to work with windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+nnoremap <up> <C-W>+
+nnoremap <down> <C-W>-
+nnoremap <left> <C-W><
+nnoremap <right> <C-W>>
 
 " you know those times when you open a file with reaaaally long lines and when you try to go to the line bellow, you find out that line is actually the current line? so you have jump letter by letter, word by word to get on that position. that's really frustrating. well not anymore. try using j or k to jump between lines and then use gj or gk and see the difference. you'll be thankful for that new discovery.
 " sabe quando você abre um arquivo com aquelas linhas enormes e quando você tenta ir para a linha de baixo você descobre que na verdade aquela linha é a mesma em que você está? então você tem que pular letra por letra, palavra por palavra, até chegar na posição que você queria. isso é muito frustrante. quer dizer, não mais. tente usar j ou k para andar por estas linhas, e depois gj ou gk e veja a diferença. você vai ficar agradecido por essa nova descoberta.
