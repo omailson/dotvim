@@ -10,6 +10,8 @@ set wildmenu      " no modo de comando, ao teclar TAB, completa o que foi escrit
 set exrc          " enable per-directory .vimrc files
 set secure        " disable unsafe commands in local .vimrc files
 set cursorline    " highlight line under cursor
+set guioptions-=m " removes gVim's menubar
+set guioptions-=T " removes gVim's toolbar
 syntax on
 
 if version >= 703
@@ -57,11 +59,6 @@ elseif MySys() == "windows"
 	set encoding=utf-8
 	set fileencodings=utf-8
 endif
-
-if has("gui_running")
-	set lines=99 columns=999
-endif
-
 
 set listchars=tab:▸\ ,trail:·,nbsp:%,eol:¬,extends:→,precedes:← " configuração do list. digite :set list para ver alguns caracteres não imprimíveis
 " set expandtab " Usa espaço ao invés de TAB
