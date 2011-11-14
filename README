@@ -1,3 +1,5 @@
+This is my personal vim configuration. Use it at your own risk.
+
 Please, add the following lines to your .vimrc
 
 fun! MySys()
