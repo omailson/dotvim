@@ -67,6 +67,7 @@ set listchars=tab:▸\ ,trail:·,nbsp:%,eol:¬,extends:→,precedes:← " config
 " Destaca a palavra buscada. 
 " Use :noh para desativar temporariamente (é reativado na busca seguinte)
 set hlsearch
+set incsearch
 
 " Não destaca os () [] {}
 "let loaded_matchparen=1
