@@ -1,4 +1,7 @@
 set nocompatible  " not compatible to Vi
+
+call pathogen#infect()
+
 set tabstop=4     " quantos colunas um tab vai ter (apertando a tecla TAB)
 set shiftwidth=4  " idem, mas é usando >> ou <<
 set autoindent    " indentação automática
