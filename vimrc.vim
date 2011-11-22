@@ -240,6 +240,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""
 au FileType python setlocal softtabstop=4
 au FileType python setlocal expandtab
+au FileType python map <F6> :!./% <Enter><Enter>
 
 """"""""""""""""""""""""""""""""""""""""
 " QML                                  "
