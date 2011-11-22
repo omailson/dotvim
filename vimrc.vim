@@ -249,4 +249,4 @@ au BufRead,BufNewFile *.qml map <F6> :!qmlviewer % <Enter><Enter>
 au BufRead,BufNewFile *.qml setlocal softtabstop=4
 au BufRead,BufNewFile *.qml setlocal expandtab
 
-
+let g:CommandTMaxHeight=15
