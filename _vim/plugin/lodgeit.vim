@@ -91,7 +91,7 @@ if vim.eval('a:0') == '1':
     if paste:
         vim.command('tabnew')
         vim.command('file Lodgeit\ Paste\ \#%s' % paste_id)
-        vim.current.buffer[:] = paste['code'].splitlines()
+        vim.current.buffer[:] = [line.encode('utf-8') for line in paste['code'].splitlines()]
         vim.command('setlocal ft=' + language_reverse_mapping.
                     get(paste['language'], 'text'))
         vim.command('setlocal nomodified')
