@@ -142,6 +142,7 @@ nmap <A-Up> mz:m-2<cr>`z
 vmap <A-Down> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <A-Up> :m'<-2<cr>`>my`<mzgv`yo`z
 
+map <F1> :call SpellCheckToggle()<CR>
 map <F2> :NERDTreeToggle<CR>
 map <S-F2> :NERDTreeFind<CR>
 
@@ -205,6 +206,22 @@ endfun
 
 " testes
 map ,m :echo GetWord()<cr>
+
+fun! SpellCheckToggle()
+	if &spell
+		if &spelllang == "en"
+			setlocal spelllang=pt
+			echo "Português"
+		else
+			setlocal nospell
+			echo "No spell"
+		endif
+	else
+		setlocal spell
+		setlocal spelllang=en
+		echo "English"
+	endif
+endfun
 
 """"""""""""""""""""""""""""""""""""""""
 " Haskell Mode (plugin)                "
