@@ -116,6 +116,9 @@ map ,O O<Esc>
 map OM O<Esc>
 " The above mapping is a <S-Return>
 
+" Opposite of Shift+J
+nmap K i<CR><Esc>k$hl
+
 " ?? muito chato digitar ''+p para colar texto da área de transferência
 " + é Shift+=, mas ter que apertar o shift é dose. Por isso o =
 " - é a tecla que está do lado do =
