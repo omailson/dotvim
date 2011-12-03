@@ -148,6 +148,7 @@ vmap <A-Up> :m'<-2<cr>`>my`<mzgv`yo`z
 map <F1> :call SpellCheckToggle()<CR>
 map <F2> :NERDTreeToggle<CR>
 map <S-F2> :NERDTreeFind<CR>
+nmap <F4> :A<CR>
 
 " Trocar de aba
 map <C-Left> gT
