@@ -23,6 +23,16 @@ Ctrl+V - Block selection
 I - Insere algo no bloco e se repete nas outras linhas. Ex: Ctrl+V a primeira coluna, dê I e depois digite #. Pronto, as linhas selecionadas estarão todas comentadas
 c - Faz algo parecido com o I, mas ao invés de adicionar caracteres, ele substitui os existentes pelos digitados
 
+== Posição ==
+T, M, L -> cursor no topo, meio ou final da tela (respectivamente)
+zt z. zb -> linha em que está o cursor fica no topo, no meio ou no final da tela
+
+== Tags ==
+Ctrl+] -> vai para a definição da tag
+Ctrl+T -> volta para quem chamou a tag
+:tags -> lista as tags
+!ctags * -> cria o arquivo de tags
+
 == Comandos do Insert Mode ==
 Ctrl+T -> Indenta+1
 Ctrl+D -> Indenta-1
