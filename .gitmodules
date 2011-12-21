@@ -1,0 +1,3 @@
+[submodule "plugins/vim-qml"]
+	path = plugins/vim-qml
+	url = git://github.com/omailson/vim-qml.git
