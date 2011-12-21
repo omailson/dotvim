@@ -1,3 +1,6 @@
 [submodule "plugins/vim-qml"]
 	path = plugins/vim-qml
 	url = git://github.com/omailson/vim-qml.git
+[submodule "plugins/nerdtree"]
+	path = plugins/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
