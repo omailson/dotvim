@@ -4,3 +4,6 @@
 [submodule "plugins/nerdtree"]
 	path = plugins/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule "plugins/pydoc.vim"]
+	path = plugins/pydoc.vim
+	url = https://github.com/fs111/pydoc.vim.git
