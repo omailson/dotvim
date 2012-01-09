@@ -39,6 +39,37 @@ endif
 " digite :set list para ver alguns caracteres não imprimíveis
 set listchars=tab:▸\ ,trail:·,nbsp:%,eol:¬,extends:→,precedes:← 
 
+" Status line of awesome
+" Taken from http://github.com/lrvick/dotvim 
+set laststatus=2
+set statusline=         " clear statusline for vim reload
+set statusline+=%f     " filename/path
+set statusline+=%y    " filetype
+set statusline+=\[%{FileSize()}]
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] " file format
+set statusline+=%h      " help file flag
+set statusline+=%m      " modified flag
+set statusline+=%r      " read only flag
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''} " Git Branch (if fugitive loaded)
+set statusline+=[%{strftime(\"\%d\/\%m\/\%Y\ \%T\",getftime(expand(\"\%\%\")))}]  " Last Modified
+set statusline+=%=      " left/right seperator
+set statusline+=[%c,    " cursor column
+set statusline+=%l/%L]   " cursor line/total lines
+function! FileSize()
+	let bytes = getfsize(expand("%:p"))
+	if bytes <= 0
+		return ""
+	endif
+	if bytes < 1024
+		return bytes
+	elseif bytes < 1048576
+		return (bytes / 1024) . "K"
+	else
+		return (bytes / 1048576) . "M"
+	endif
+endfunction
+
 " peaksea colorscheme
 if ! has("gui_running")
 	set t_Co=256
