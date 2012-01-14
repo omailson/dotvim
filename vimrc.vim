@@ -39,6 +39,22 @@ endif
 " digite :set list para ver alguns caracteres não imprimíveis
 set listchars=tab:▸\ ,trail:·,nbsp:%,eol:¬,extends:→,precedes:← 
 
+" peaksea colorscheme
+if ! has("gui_running")
+	set t_Co=256
+endif
+
+" Visual behaviour
+if MySys() == "linux"
+	set background=dark
+	colors peaksea
+elseif MySys() == "windows"
+	set guifont=DejaVu_Sans_Mono:h10:cANSI
+	set backspace=indent,eol,start
+	set encoding=utf-8
+	set fileencodings=utf-8
+endif
+
 " Status line of awesome
 " Taken from http://github.com/lrvick/dotvim 
 set laststatus=2
@@ -69,22 +85,6 @@ function! FileSize()
 		return (bytes / 1048576) . "M"
 	endif
 endfunction
-
-" peaksea colorscheme
-if ! has("gui_running")
-	set t_Co=256
-endif
-
-" Visual behaviour
-if MySys() == "linux"
-	set background=dark
-	colors peaksea
-elseif MySys() == "windows"
-	set guifont=DejaVu_Sans_Mono:h10:cANSI
-	set backspace=indent,eol,start
-	set encoding=utf-8
-	set fileencodings=utf-8
-endif
 
 " Highlight line under cursor
 " Must be set after colors
