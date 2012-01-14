@@ -1,6 +1,6 @@
 set nocompatible  " not compatible to Vi
 
-source /home/mailson/Dropbox/vim/dotvimrc.vim
+source ~/.dotvimrc
 
 " Set where the vim folder is located. It's useful if you put your plugins in
 " a folder other than ~/.vim
