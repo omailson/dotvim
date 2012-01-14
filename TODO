@@ -1,0 +1,5 @@
+ - Change CursorLine or StatusLine when entering or leaving InsertMode
+ http://vim.wikia.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode
+ 
+ - Create a Makefile to easily build and install my entire vim settings
+ https://github.com/markstory/vim-files/blob/master/Makefile
