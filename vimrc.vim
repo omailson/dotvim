@@ -57,6 +57,7 @@ endif
 
 " Status line of awesome
 " Taken from http://github.com/lrvick/dotvim 
+hi StatusLine ctermbg=yellow
 set laststatus=2
 set statusline=         " clear statusline for vim reload
 set statusline+=%f     " filename/path
