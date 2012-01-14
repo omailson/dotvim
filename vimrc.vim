@@ -1,5 +1,7 @@
 set nocompatible  " not compatible to Vi
 
+source /home/mailson/Dropbox/vim/dotvimrc.vim
+
 " Include pathogen
 call pathogen#infect()
 
