@@ -57,6 +57,7 @@ endif
 
 " Status line of awesome
 " Taken from http://github.com/lrvick/dotvim 
+hi User1 ctermbg=black ctermfg=yellow
 hi StatusLine ctermbg=yellow
 set laststatus=2
 set statusline=         " clear statusline for vim reload
@@ -66,7 +67,9 @@ set statusline+=\[%{FileSize()}]
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}] " file format
 set statusline+=%h      " help file flag
+set statusline+=%1*
 set statusline+=%m      " modified flag
+set statusline+=%0*
 set statusline+=%r      " read only flag
 set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''} " Git Branch (if fugitive loaded)
 set statusline+=[%{strftime(\"\%d\/\%m\/\%Y\ \%T\",getftime(expand(\"\%\%\")))}]  " Last Modified
