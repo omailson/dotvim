@@ -1,14 +1,6 @@
 This is my personal vim configuration. Use it at your own risk.
 
-Please, add the following lines to your .vimrc
+Please, copy vimrc.vim and dotvimrc.vim to your home folder and rename them to
+.vimrc and .dotvimrc respectively. A better solution is create a symbolic link.
 
-fun! MySys()
-	return "linux"
-endfun
-
-" Arquivo .vimrc comum a todos os sistemas
-let g:dotvim_path = "/home/mailson/Dropbox/vim/"
-let g:dotvim_backupdir = "~/.vim_local/backup"
-let g:dotvim_tmpdir = "~/.vim_local/tmp"
-
-exe "source ".g:dotvim_path."/vimrc.vim"
+You'll probably want to edit the dotvimrc.vim as well.
