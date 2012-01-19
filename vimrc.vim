@@ -7,7 +7,7 @@ source ~/.dotvimrc
 exe "set runtimepath=".g:dotvim_path."/vim,".$VIMRUNTIME
 
 " Include pathogen
-call pathogen#infect()
+call pathogen#infect(g:dotvim_path."/vim/bundle")
 
 " Space, tabs, etc
 set tabstop=4     " quantos colunas um tab vai ter (apertando a tecla TAB)
