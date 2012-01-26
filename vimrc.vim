@@ -174,6 +174,9 @@ vmap <A-Up> :m'<-2<cr>`>my`<mzgv`yo`z
 " Turn spell check on/off
 map <F1> :call SpellCheckToggle()<CR>
 
+" Toggle line number
+map <F3> :call LineNumberToggle()<CR>
+
 map ,n :call ShowNumberStatus()<CR>
 
 " Save as super user
@@ -241,6 +244,14 @@ fun! SpellCheckToggle()
 		setlocal spell
 		setlocal spelllang=en
 		echo "English"
+	endif
+endfun
+
+fun! LineNumberToggle()
+	if &relativenumber
+		setlocal number
+	elseif &number
+		setlocal relativenumber
 	endif
 endfun
 
