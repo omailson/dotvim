@@ -177,6 +177,9 @@ map <F1> :call SpellCheckToggle()<CR>
 " Toggle line number
 map <F3> :call LineNumberToggle()<CR>
 
+" Reload all opened files
+nmap <F5> :tabdo windo edit<CR>
+
 map ,n :call ShowNumberStatus()<CR>
 
 " Save as super user
