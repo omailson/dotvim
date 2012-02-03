@@ -1,6 +1,4 @@
-help:
-	@echo "symlink    Create symbolic links to vimrc and dotvimrc"
-	@echo "commandt   Compiles the command-t plugin"
+all: commandt helptags
 
 commandt:
 	cd vim/bundle/command-t/ruby/command-t/;\
@@ -13,5 +11,13 @@ helptags:
 		&& echo "Documentation files created"\
 		|| echo "Cannot find vimrc. Did you run ./configure.sh?"
 
-symlink:
-	ln -s ~+/vimrc ~/.vimrc
+install:
+	@ln -s ~+/vimrc ~/.vimrc\
+		&& echo "dotvim successfully installed"\
+		|| echo "can't install dotvim"
+
+uninstall:
+	@test -L ~/.vimrc\
+		&& rm ~/.vimrc\
+		&& echo "~/.vimrc successfully removed"\
+		|| echo "Can't remove ~/.vimrc (the only installed file)"

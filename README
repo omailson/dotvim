@@ -12,15 +12,17 @@ $ ./configure.sh
 
 This will create a file called vimrc
 
-Then compile command-t plugin
+Then run make
 
-$ make commandt
+$ make
+
+This will compile the command-t plugin and generate your plugins help tags.
 
 Now you need to install.
 
 WARNING: This will erase user's .vimrc
 
-$ make symlink
+$ make install
 
 PORTABLE
 ===============
