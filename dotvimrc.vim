@@ -119,7 +119,7 @@ elseif MySys() == "windows"
 endif
 
 " Jumps to last known position of the recently opened file
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+au BufReadPost * if &ft != "gitcommit" && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " Keymaps
 " vim beginners mode: disables arrow keys so you can get used to hjkl.
