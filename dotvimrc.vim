@@ -139,6 +139,7 @@ nnoremap <left> <C-W><
 nnoremap <right> <C-W>>
 nnoremap <C-W>s <C-W>s<C-W>j
 nnoremap <C-W>v <C-W>v<C-W>l
+nnoremap <C-W><C-V> <C-W>v<C-W>l
 
 " Visual move between lines
 nnoremap j gj
@@ -153,6 +154,9 @@ map OM O<Esc>
 
 " Opposite of Shift+J
 nmap K i<CR><Esc>k$hl
+
+" Sometimes I type Lw instead of :w
+nmap Lw :w
 
 " Easier way to copy/paste from an external program
 map ,- "*
