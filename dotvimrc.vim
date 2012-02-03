@@ -118,8 +118,8 @@ elseif MySys() == "windows"
 	set viminfo='10,\"30,:20,%,nC:/Users/mailson/_viminfo
 endif
 
-" Deixa o cursor na posição que estava da última vez
-au BufReadPost * if line("'\"")|execute("normal `\"")|endif
+" Jumps to last known position of the recently opened file
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " Keymaps
 " vim beginners mode: disables arrow keys so you can get used to hjkl.
