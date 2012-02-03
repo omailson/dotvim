@@ -10,7 +10,7 @@ First run the configure script and answer the questions.
 
 $ ./configure.sh 
 
-This will create a file called dotvimrc.vim
+This will create a file called vimrc
 
 Then compile command-t plugin
 

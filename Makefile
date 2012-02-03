@@ -8,5 +8,5 @@ commandt:
 		make clean && make
 
 symlink:
-	ln -s ~+/vimrc.vim ~/.vimrc
-	ln -s ~+/dotvimrc.vim ~/.dotvimrc
+	ln -s ~+/dotvimrc.vim ~/.vimrc
+	ln -s ~+/vimrc ~/.dotvimrc
