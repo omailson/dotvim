@@ -64,13 +64,13 @@ then
 fi
 
 echo
-echo "Configuring your dotvimrc.vim ..."
-if [ -e dotvimrc.vim ]
+echo "Configuring your vimrc ..."
+if [ -e vimrc ]
 then
-	echo "error: dotvimrc.vim already exists. Please remove it and try again."
+	echo "error: vimrc already exists. Please remove it and try again."
 	exit 1
 fi
-cat << EOF >> dotvimrc.vim
+cat << EOF >> vimrc
 fun! MySys()
 	return "linux"
 endfun
@@ -82,7 +82,7 @@ EOF
 
 if [ "$dotvim_opt_backup" != "." ]; then
 	eval mkdir -p "$dotvim_opt_backup"
-cat << EOF >> dotvimrc.vim
+cat << EOF >> vimrc
 " directory to store backup files
 let g:dotvim_backupdir = "`echo "$dotvim_opt_backup"`"
 EOF
@@ -90,11 +90,23 @@ fi
 
 if [ "$dotvim_opt_tmp" != "." ]; then
 	eval mkdir -p "$dotvim_opt_tmp"
-cat << EOF >> dotvimrc.vim
+cat << EOF >> vimrc
 " directory to store temp files
 let g:dotvim_tmpdir = "`echo "$dotvim_opt_tmp"`"
 EOF
 fi
+
+cat << EOF >> vimrc
+
+"" Portable mode.
+" Set to 1 if you already have another vim environment configured to the user
+" and want to use this configuration instead.
+if !exists("g:dotvim_portable")
+	let g:dotvim_portable = 0
+endif
+
+exe "source ".g:dotvim_path."/dotvimrc.vim"
+EOF
 
 cat << EOF
 

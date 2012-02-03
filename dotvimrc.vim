@@ -1,10 +1,12 @@
 set nocompatible  " not compatible to Vi
 
-source ~/.dotvimrc
-
 " Set where the vim folder is located. It's useful if you put your plugins in
 " a folder other than ~/.vim
-exe "set runtimepath=".g:dotvim_path."/vim,".&runtimepath
+if g:dotvim_portable
+	exe "set runtimepath=".g:dotvim_path."/vim,".$VIMRUNTIME
+else
+	exe "set runtimepath=".g:dotvim_path."/vim,".&runtimepath
+endif
 
 " Include pathogen
 call pathogen#infect(g:dotvim_path."/vim/bundle")
