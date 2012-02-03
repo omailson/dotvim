@@ -1,6 +1,23 @@
 This is my personal vim configuration. Use it at your own risk.
 
-Please, copy vimrc.vim and dotvimrc.vim to your home folder and rename them to
-.vimrc and .dotvimrc respectively. A better solution is create a symbolic link.
+INSTRUCTIONS
+===============
 
-You'll probably want to edit the dotvimrc.vim as well.
+I tried my best to make the installation process the simplest thing. Just
+follow the instructions below:
+
+First run the configure script and answer the questions.
+
+$ ./configure.sh 
+
+This will create a file called dotvimrc.vim
+
+Then compile command-t plugin
+
+$ make commandt
+
+Now you need to install.
+
+WARNING: This will erase user's .vimrc
+
+$ make symlink
