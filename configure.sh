@@ -96,6 +96,11 @@ let g:dotvim_tmpdir = "`echo "$dotvim_opt_tmp"`"
 EOF
 fi
 
+cat << EOF >> vimrc
+
+exe "source ".g:dotvim_path."/dotvimrc.vim"
+EOF
+
 cat << EOF
 
 This step is over but we're not done yet.
