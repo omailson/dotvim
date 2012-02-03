@@ -21,3 +21,17 @@ Now you need to install.
 WARNING: This will erase user's .vimrc
 
 $ make symlink
+
+PORTABLE
+===============
+
+You can use this configuration even when another vim environment is already set
+to the user.
+Just set the corresponding variable on your generated vimrc and open vim using
+the command below:
+
+$ vim -u vimrc
+
+You'll probably enjoy this wonderful alias:
+
+$ alias vim='vim -u /path/to/dotvim/vimrc --cmd "let g:dotvim_portable = 1"'

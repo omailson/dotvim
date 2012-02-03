@@ -98,6 +98,13 @@ fi
 
 cat << EOF >> vimrc
 
+"" Portable mode.
+" Set to 1 if you already have another vim environment configured to the user
+" and want to use this configuration instead.
+if !exists("g:dotvim_portable")
+	let g:dotvim_portable = 0
+endif
+
 exe "source ".g:dotvim_path."/dotvimrc.vim"
 EOF
 

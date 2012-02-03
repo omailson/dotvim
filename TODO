@@ -1,6 +1,2 @@
  - Change CursorLine or StatusLine when entering or leaving InsertMode
  http://vim.wikia.com/wiki/Change_statusline_color_to_show_insert_or_normal_mode
-
- - Make it portable so you can use it without the need to install.
- The user will source only an auto generated vimrc (similar to dotvimrc.vim)
- and that file will source the rest of the scripts.
