@@ -7,3 +7,24 @@
 [submodule "plugins/pydoc.vim"]
 	path = plugins/pydoc.vim
 	url = https://github.com/fs111/pydoc.vim.git
+[submodule "plugins/vim-rails"]
+	path = plugins/vim-rails
+	url = git://github.com/tpope/vim-rails.git
+[submodule "plugins/snipmate.vim"]
+	path = plugins/snipmate.vim
+	url = git://github.com/msanders/snipmate.vim.git
+[submodule "plugins/vim-surround"]
+	path = plugins/vim-surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "plugins/command-t"]
+	path = plugins/command-t
+	url = git://git.wincent.com/command-t.git
+[submodule "plugins/vim-pathogen"]
+	path = plugins/vim-pathogen
+	url = git://github.com/tpope/vim-pathogen.git
+[submodule "plugins/a.vim"]
+	path = plugins/a.vim
+	url = git://github.com/vim-scripts/a.vim.git
+[submodule "plugins/AutoClose"]
+	path = plugins/AutoClose
+	url = git://github.com/vim-scripts/AutoClose.git
