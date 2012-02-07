@@ -1,2 +1,4 @@
 .netrwhist
 /vimrc
+/vim/bundle/*/doc/tags
+haskellmode.config
