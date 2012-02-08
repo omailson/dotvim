@@ -28,3 +28,6 @@
 [submodule "plugins/AutoClose"]
 	path = plugins/AutoClose
 	url = git://github.com/vim-scripts/AutoClose.git
+[submodule "plugins/lodgeit.vim"]
+	path = plugins/lodgeit.vim
+	url = git://github.com/omailson/lodgeit.vim.git
