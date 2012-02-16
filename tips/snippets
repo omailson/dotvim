@@ -25,7 +25,7 @@ c - Faz algo parecido com o I, mas ao invés de adicionar caracteres, ele substi
 
 == Posição ==
 T, M, L -> cursor no topo, meio ou final da tela (respectivamente)
-zt z. zb -> linha em que está o cursor fica no topo, no meio ou no final da tela
+zt zz zb -> linha em que está o cursor fica no topo, no meio ou no final da tela
 
 == Tags ==
 Ctrl+] -> vai para a definição da tag
