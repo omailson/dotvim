@@ -31,3 +31,6 @@
 [submodule "plugins/lodgeit.vim"]
 	path = plugins/lodgeit.vim
 	url = git://github.com/omailson/lodgeit.vim.git
+[submodule "plugins/fugitive"]
+	path = plugins/fugitive
+	url = git://github.com/tpope/vim-fugitive.git
