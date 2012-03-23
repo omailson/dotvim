@@ -15,6 +15,7 @@ call pathogen#infect(g:dotvim_path."/vim/bundle")
 set tabstop=4     " quantos colunas um tab vai ter (apertando a tecla TAB)
 set shiftwidth=4  " idem, mas é usando >> ou <<
 set autoindent    " indentação automática
+set expandtab     " use spaces instead of tabs
 
 " Search options
 set hlsearch      " highlight search
