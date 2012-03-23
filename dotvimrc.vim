@@ -298,3 +298,6 @@ nmap <F4> :A<CR>
 
 "" Lodgeit
 let g:lodgeit_host = "10.60.5.222:8081"
+
+"" TComment
+let g:tcomment_types = {'qml': '// %s'}
