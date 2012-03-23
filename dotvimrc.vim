@@ -295,3 +295,6 @@ map <S-F2> :NERDTreeFind<CR>
 
 "" A
 nmap <F4> :A<CR>
+
+"" Lodgeit
+let g:lodgeit_host = "10.60.5.222:8081"
