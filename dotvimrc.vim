@@ -56,24 +56,23 @@ if MySys() == "windows"
 endif
 
 " VISUAL BEHAVIOR
-
 "" Color scheme
-" peaksea colorscheme
 if ! has("gui_running")
+    set background=dark
     set t_Co=256
+    let g:solarized_termcolors=256
+else
+    set background=light
 endif
-set background=dark
-colors peaksea
+colorscheme solarized
 
 "" Status line
 hi User1 ctermbg=black ctermfg=yellow
-hi StatusLine ctermbg=yellow
 
 "" Cursor line
 " Highlight line under cursor
 " Must be set after colors
 set cursorline
-highlight CursorLine cterm=NONE ctermbg=black gui=NONE guibg=#001100
 
 " Status line of awesome
 " Taken from http://github.com/lrvick/dotvim 
