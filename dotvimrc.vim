@@ -48,26 +48,35 @@ endif
 " digite :set list para ver alguns caracteres não imprimíveis
 set listchars=tab:▸\ ,trail:·,nbsp:%,eol:¬,extends:→,precedes:← 
 
-" peaksea colorscheme
-if ! has("gui_running")
-	set t_Co=256
-endif
-
-" Visual behaviour
-if MySys() == "linux"
-	set background=dark
-	colors peaksea
-elseif MySys() == "windows"
+if MySys() == "windows"
 	set guifont=DejaVu_Sans_Mono:h10:cANSI
 	set backspace=indent,eol,start
 	set encoding=utf-8
 	set fileencodings=utf-8
 endif
 
-" Status line of awesome
-" Taken from http://github.com/lrvick/dotvim 
+" VISUAL BEHAVIOR
+
+"" Color scheme
+" peaksea colorscheme
+if ! has("gui_running")
+    set t_Co=256
+endif
+set background=dark
+colors peaksea
+
+"" Status line
 hi User1 ctermbg=black ctermfg=yellow
 hi StatusLine ctermbg=yellow
+
+"" Cursor line
+" Highlight line under cursor
+" Must be set after colors
+set cursorline
+highlight CursorLine cterm=NONE ctermbg=black gui=NONE guibg=#001100
+
+" Status line of awesome
+" Taken from http://github.com/lrvick/dotvim 
 set laststatus=2
 set statusline=         " clear statusline for vim reload
 set statusline+=%f     " filename/path
@@ -98,11 +107,6 @@ function! FileSize()
 		return (bytes / 1048576) . "M"
 	endif
 endfunction
-
-" Highlight line under cursor
-" Must be set after colors
-set cursorline
-highlight CursorLine cterm=NONE ctermbg=black gui=NONE guibg=#001100
 
 if exists("g:dotvim_backupdir")
 	exe "set backupdir=".g:dotvim_backupdir
