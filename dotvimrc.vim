@@ -58,21 +58,32 @@ endif
 " VISUAL BEHAVIOR
 "" Color scheme
 if ! has("gui_running")
-    set background=dark
-    set t_Co=256
-    let g:solarized_termcolors=256
+    if !exists("g:dotvim_vi") || !g:dotvim_vi
+        set background=dark
+        set t_Co=256
+        colorscheme peaksea
+    else
+        colorscheme desert
+    endif
 else
     set background=light
+    colorscheme solarized
 endif
-colorscheme solarized
 
 "" Status line
 hi User1 ctermbg=black ctermfg=yellow
+if g:colors_name == "peaksea"
+    hi StatusLine ctermbg=yellow
+endif
+
 
 "" Cursor line
 " Highlight line under cursor
 " Must be set after colors
-set cursorline
+" set cursorline
+if g:colors_name == "peaksea"
+    highlight CursorLine cterm=NONE ctermbg=black gui=NONE guibg=#001100
+endif
 
 " Status line of awesome
 " Taken from http://github.com/lrvick/dotvim 
