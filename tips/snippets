@@ -26,6 +26,8 @@ c - Faz algo parecido com o I, mas ao invés de adicionar caracteres, ele substi
 == Posição ==
 T, M, L -> cursor no topo, meio ou final da tela (respectivamente)
 zt zz zb -> linha em que está o cursor fica no topo, no meio ou no final da tela
+Ctrl+O -> Jump to a previous position
+Ctrl+I -> Jump to the next position
 
 == Tags ==
 Ctrl+] -> vai para a definição da tag
@@ -37,6 +39,7 @@ Ctrl+T -> volta para quem chamou a tag
 Ctrl+T -> Indenta+1
 Ctrl+D -> Indenta-1
 Ctrl+R[0-9a-z*+] -> Coloca o que está no registrador
+Ctrl+V TAB -> Insert a tab even on expandtab mode
 
 == Dígrafos ==
 :dig - lista os dígrafos
