@@ -300,6 +300,12 @@ au BufRead,BufNewFile *.qml map <F6> :!qmlviewer % <Enter><Enter>
 au BufRead,BufNewFile *.qml setlocal softtabstop=4
 au BufRead,BufNewFile *.qml setlocal expandtab
 
+"" Java
+au FileType java setlocal noexpandtab
+
+"" Shell
+au FileType sh setlocal noexpandtab
+
 "" Command-T
 let g:CommandTMaxHeight=15
 
