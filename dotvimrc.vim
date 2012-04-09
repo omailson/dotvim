@@ -204,7 +204,7 @@ nmap <F5> :tabdo windo edit<CR>
 map ,n :call ShowNumberStatus()<CR>
 
 " Save as super user
-cab wsudo w !sudo tee %
+command Wsudo :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 """"""""""""""""""""""""""""""""""""""""
 " Funções                              "
