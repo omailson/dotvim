@@ -290,6 +290,8 @@ if MySys() == "linux"
 	let g:haddock_browser = "/usr/bin/chromium"
 endif
 
+au FileChangedRO * set noreadonly
+
 "" Python
 au FileType python setlocal softtabstop=4
 au FileType python setlocal expandtab
