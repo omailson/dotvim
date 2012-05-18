@@ -29,6 +29,10 @@ zt zz zb -> linha em que está o cursor fica no topo, no meio ou no final da tel
 Ctrl+O -> Jump to a previous position
 Ctrl+I -> Jump to the next position
 
+== Scroll horizontally ==
+zl, zh, zL, zH
+set guioptions += b
+
 == Tags ==
 Ctrl+] -> vai para a definição da tag
 Ctrl+T -> volta para quem chamou a tag
