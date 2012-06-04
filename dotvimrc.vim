@@ -145,8 +145,6 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 
 " Shortcuts to work with windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 nnoremap <up> <C-W>+
@@ -158,8 +156,8 @@ nnoremap <C-W>v <C-W>v<C-W>l
 nnoremap <C-W><C-V> <C-W>v<C-W>l
 
 " Visual move between lines
-nnoremap j gj
-nnoremap k gk
+nnoremap <C-j> gj
+nnoremap <C-k> gk
 
 " Inserir uma linha abaixo do cursor e continuar no modo normal
 map ,o o<Esc>
