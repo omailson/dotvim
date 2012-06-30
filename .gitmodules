@@ -49,3 +49,6 @@
 [submodule "plugins/solarized"]
 	path = plugins/solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "plugins/pastie"]
+	path = plugins/pastie
+	url = git://github.com/tpope/vim-pastie.git
