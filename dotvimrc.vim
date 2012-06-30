@@ -165,8 +165,6 @@ nnoremap <C-l> 3zl
 map ,o o<Esc>
 map <Return> o<Esc>k
 map ,O O<Esc>
-map OM O<Esc>
-" The above mapping is a <S-Return>
 
 " Opposite of Shift+J
 nmap K i<CR><Esc>k$hl
