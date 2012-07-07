@@ -92,7 +92,6 @@ set laststatus=2
 set statusline=         " clear statusline for vim reload
 set statusline+=%f     " filename/path
 set statusline+=%y    " filetype
-set statusline+=\[%{FileSize()}]
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}] " file format
 set statusline+=%h      " help file flag
@@ -102,8 +101,8 @@ set statusline+=%0*
 set statusline+=%r      " read only flag
 set statusline+=[%{strftime(\"\%d\/\%m\/\%Y\ \%T\",getftime(expand(\"\%\%\")))}]  " Last Modified
 set statusline+=%=      " left/right seperator
-set statusline+=[%c,    " cursor column
-set statusline+=%l/%L]   " cursor line/total lines
+set statusline+=C:%c-    " cursor column
+set statusline+=L:%l/%L   " cursor line/total lines
 function! FileSize()
 	let bytes = getfsize(expand("%:p"))
 	if bytes <= 0
