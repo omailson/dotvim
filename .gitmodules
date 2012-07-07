@@ -52,3 +52,6 @@
 [submodule "plugins/pastie"]
 	path = plugins/pastie
 	url = git://github.com/tpope/vim-pastie.git
+[submodule "plugins/tagbar"]
+	path = plugins/tagbar
+	url = git://github.com/majutsushi/tagbar.git
