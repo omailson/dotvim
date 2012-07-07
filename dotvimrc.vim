@@ -100,7 +100,6 @@ set statusline+=%1*
 set statusline+=%m      " modified flag
 set statusline+=%0*
 set statusline+=%r      " read only flag
-set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''} " Git Branch (if fugitive loaded)
 set statusline+=[%{strftime(\"\%d\/\%m\/\%Y\ \%T\",getftime(expand(\"\%\%\")))}]  " Last Modified
 set statusline+=%=      " left/right seperator
 set statusline+=[%c,    " cursor column
