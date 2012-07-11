@@ -170,6 +170,12 @@ nmap K i<CR><Esc>k$hl
 " Sometimes I type Lw instead of :w
 nmap Lw :w
 
+" Change from -> to .
+nmap ,. xr.
+" Change from . to ->
+nmap ,> xi-><ESC>h
+
+
 " Easier way to copy/paste from an external program
 map ,- "*
 map ,= "+
