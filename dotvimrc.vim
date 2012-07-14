@@ -208,6 +208,8 @@ map ,n :call ShowNumberStatus()<CR>
 
 " Save as super user
 command Wsudo :execute ':silent w !sudo tee % > /dev/null' | :edit!
+" Avoid accidentally saving as super user
+command W :w
 
 """"""""""""""""""""""""""""""""""""""""
 " Funções                              "
