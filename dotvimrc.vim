@@ -175,6 +175,8 @@ nmap ,. xr.
 " Change from . to ->
 nmap ,> xi-><ESC>h
 
+" Append the word under cursor to search terms
+nmap ,/w /<up>\\|\<<C-R><C-W>\><CR>N
 
 " Easier way to copy/paste from an external program
 map ,- "*
