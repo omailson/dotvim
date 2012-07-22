@@ -178,6 +178,9 @@ nmap ,> xi-><ESC>h
 " Append the word under cursor to search terms
 nmap ,/w /<up>\\|\<<C-R><C-W>\><CR>N
 
+" Helper search to resolve merge conflicts
+nmap ,/m /<<<<<<<\\|=======\\|>>>>>>><CR>
+
 " Easier way to copy/paste from an external program
 map ,- "*
 map ,= "+
