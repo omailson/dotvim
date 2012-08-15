@@ -66,6 +66,10 @@ gq -> alinha com a largura especificada
 gf -> abre o arquivo em baixo do cursor
 5G -> vai para a linha 
 
+== Movement ==
+:m-2 -> move one line above
+:m+1 -> move one line below
+
 == vimdiff ==
 do -> get changes from other window into the current window
 dp -> put changes from current window into the other window
