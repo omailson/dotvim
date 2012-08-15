@@ -337,3 +337,8 @@ let g:tcomment_types = {'qml': '// %s', 'plaintex': '%% %s', 'cuda': '// %s'}
 "" Tagbar
 nnoremap <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
+
+"" Bookmarking
+map ,bb :ToggleBookmark<CR>
+map ,bn :NextBookmark<CR>
+map ,bp :PreviousBookmark<CR>

@@ -55,3 +55,6 @@
 [submodule "plugins/tagbar"]
 	path = plugins/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "plugins/bookmarking"]
+	path = plugins/bookmarking
+	url = git://github.com/dterei/VimBookmarking.git
