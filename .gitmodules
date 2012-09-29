@@ -58,3 +58,6 @@
 [submodule "plugins/bookmarking"]
 	path = plugins/bookmarking
 	url = git://github.com/dterei/VimBookmarking.git
+[submodule "plugins/zencoding"]
+	path = plugins/zencoding
+	url = git://github.com/mattn/zencoding-vim.git
