@@ -61,3 +61,6 @@
 [submodule "plugins/zencoding"]
 	path = plugins/zencoding
 	url = git://github.com/mattn/zencoding-vim.git
+[submodule "plugins/syntaxrange"]
+	path = plugins/syntaxrange
+	url = git://github.com/vim-scripts/SyntaxRange.git
