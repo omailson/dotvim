@@ -58,6 +58,10 @@ a= -> cirílico
 vim -p path/*.cpp -> abrir varios arquivos em abas
 vim arquivo.cpp +15 -> abre na linha 15
 
+== Modeline ==
+# vim:noai:sw=2
+:h vim:
+
 == Seleção ==
 = -> identa codigo
 gq -> alinha com a largura especificada
