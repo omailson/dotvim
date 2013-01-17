@@ -185,6 +185,8 @@ nmap ,/m /<<<<<<<\\|=======\\|>>>>>>><CR>
 " Easier way to copy/paste from an external program
 map ,- "*
 map ,= "+
+map <S-F11> "*
+map <F11> "+
 
 " 0 vai para o inicio da linha. ^ faz o mesmo, mas pula os espaços/tabs iniciais
 map 0 ^
