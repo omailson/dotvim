@@ -335,7 +335,7 @@ nmap <F4> :A<CR>
 let g:lodgeit_host = "10.60.5.222:8081"
 
 "" TComment
-let g:tcomment_types = {'qml': '// %s', 'plaintex': '%% %s', 'cuda': '// %s'}
+let g:tcomment_types = {'qml': '// %s', 'plaintex': '%% %s', 'cuda': '// %s', 'cmake': '# %s'}
 
 "" Tagbar
 nnoremap <F8> :TagbarToggle<CR>
