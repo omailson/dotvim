@@ -64,3 +64,6 @@
 [submodule "plugins/syntaxrange"]
 	path = plugins/syntaxrange
 	url = git://github.com/vim-scripts/SyntaxRange.git
+[submodule "plugins/gitgutter"]
+	path = plugins/gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
