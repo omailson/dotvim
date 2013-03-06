@@ -78,6 +78,7 @@ if g:colors_name == "peaksea"
     hi StatusLine ctermbg=yellow
 endif
 
+highlight clear SignColumn
 
 "" Cursor line
 " Highlight line under cursor
