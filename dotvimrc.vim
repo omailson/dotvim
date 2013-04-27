@@ -144,6 +144,22 @@ command Wsudo :execute ':silent w !sudo tee % > /dev/null' | :edit!
 " Avoid accidentally saving as super user
 command W :w
 
+command! -nargs=* Identation call DoTabs( '<args>' )
+
+fun! DoTabs (arg)
+    if len(a:arg) == 0
+        setlocal list!
+    elseif a:arg == "t"
+        setlocal noexpandtab
+    elseif a:arg == "s"
+        setlocal expandtab
+    elseif a:arg == "2"
+        setlocal ts=2 sw=2
+    elseif a:arg == "4"
+        setlocal ts=4 sw=4
+    endif
+endfun
+
 """"""""""""""""""""""""""""""""""""""""
 " Funções                              "
 """"""""""""""""""""""""""""""""""""""""
