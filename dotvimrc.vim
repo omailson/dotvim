@@ -137,84 +137,6 @@ endif
 " Jumps to last known position of the recently opened file
 au BufReadPost * if &ft != "gitcommit" && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
-" Keymaps
-" vim beginners mode: disables arrow keys so you can get used to hjkl.
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-
-" Shortcuts to work with windows
-nnoremap <up> <C-W>+
-nnoremap <down> <C-W>-
-nnoremap <left> <C-W><
-nnoremap <right> <C-W>>
-nnoremap <C-W>s <C-W>s<C-W>j
-nnoremap <C-W>v <C-W>v<C-W>l
-nnoremap <C-W><C-V> <C-W>v<C-W>l
-
-" Visual move between lines
-nnoremap <C-j> gj
-nnoremap <C-k> gk
-
-" Horizontal scroll
-nnoremap <C-h> 3zh
-nnoremap <C-l> 3zl
-
-" Inserir uma linha abaixo do cursor e continuar no modo normal
-map ,o o<Esc>
-map <Return> o<Esc>k
-map ,O O<Esc>
-
-" Opposite of Shift+J
-nmap K i<CR><Esc>k$hl
-
-" Sometimes I type Lw instead of :w
-nmap Lw :w
-
-" Change from -> to .
-nmap ,. xr.
-" Change from . to ->
-nmap ,> xi-><ESC>h
-
-" Append the word under cursor to search terms
-nmap ,/w /<up>\\|\<<C-R><C-W>\><CR>N
-
-" Helper search to resolve merge conflicts
-nmap ,/m /<<<<<<<\\|=======\\|>>>>>>><CR>
-
-" Easier way to copy/paste from an external program
-map ,- "*
-map ,= "+
-map <F11> "*
-map <S-F11> "+
-
-" 0 vai para o inicio da linha. ^ faz o mesmo, mas pula os espaços/tabs iniciais
-map 0 ^
-
-" Change tabs
-map <C-Left> gT
-map <C-Right> gt
-inoremap <C-Left> <Esc>gT
-inoremap <C-Right> <Esc>gt
-
-" Move a line of text using ALT+[Up/Down]
-nmap <A-Down> mz:m+<cr>`z
-nmap <A-Up> mz:m-2<cr>`z
-vmap <A-Down> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <A-Up> :m'<-2<cr>`>my`<mzgv`yo`z
-
-" Turn spell check on/off
-map <F1> :call SpellCheckToggle()<CR>
-
-" Toggle line number
-map <F3> :call LineNumberToggle()<CR>
-
-" Reload all opened files
-nmap <F5> :tabdo windo edit<CR>
-
-map ,n :call ShowNumberStatus()<CR>
-
 " Save as super user
 command Wsudo :execute ':silent w !sudo tee % > /dev/null' | :edit!
 " Avoid accidentally saving as super user
@@ -325,13 +247,6 @@ au FileType sh setlocal noexpandtab
 "" Command-T
 let g:CommandTMaxHeight=15
 
-"" NERDTree
-map <F2> :NERDTreeToggle<CR>
-map <S-F2> :NERDTreeFind<CR>
-
-"" A
-nmap <F4> :A<CR>
-
 "" Lodgeit
 let g:lodgeit_host = "10.60.5.222:8081"
 
@@ -339,14 +254,6 @@ let g:lodgeit_host = "10.60.5.222:8081"
 let g:tcomment_types = {'qml': '// %s', 'plaintex': '%% %s', 'cuda': '// %s', 'cmake': '# %s'}
 
 "" Tagbar
-nnoremap <F8> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 
-"" Bookmarking
-map ,bb :ToggleBookmark<CR>
-map ,bn :NextBookmark<CR>
-map ,bp :PreviousBookmark<CR>
-
-"" GitGutter
-nnoremap ]g :GitGutterNextHunk<CR>
-nnoremap [g :GitGutterPrevHunk<CR>
+exe "source ".g:dotvim_path."/keymaps.vim"
