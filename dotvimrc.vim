@@ -346,3 +346,7 @@ let g:tagbar_autofocus = 1
 map ,bb :ToggleBookmark<CR>
 map ,bn :NextBookmark<CR>
 map ,bp :PreviousBookmark<CR>
+
+"" GitGutter
+nnoremap ]g :GitGutterNextHunk<CR>
+nnoremap [g :GitGutterPrevHunk<CR>
