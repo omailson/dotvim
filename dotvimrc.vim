@@ -41,7 +41,7 @@ syntax on
 filetype plugin indent on
 
 if version >= 703
-    set number          " show absolute line number for the current line
+	set number          " show absolute line number for the current line
 	set relativenumber  " show line number relative to current position
 else
 	set number
