@@ -36,6 +36,7 @@ set secure        " disable unsafe commands in local .vimrc files
 set backup
 set noshowmatch   " disable matching parenthesis jump
 set wildignore=*.o,*.obj,moc_*.cpp,qrc_*.cpp
+set nowrap        " do not wrap lines by default
 
 syntax on
 filetype plugin indent on
