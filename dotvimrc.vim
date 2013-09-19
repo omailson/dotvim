@@ -256,6 +256,9 @@ au BufRead,BufNewFile *.qml map <F6> :!qmlviewer % <Enter><Enter>
 au BufRead,BufNewFile *.qml setlocal softtabstop=4
 au BufRead,BufNewFile *.qml setlocal expandtab
 
+"" CSS
+au FileType css let @a='yyplct-moz0yyplct-ms0yyplct-o0yypdf-'
+
 "" Java
 au FileType java setlocal noexpandtab
 
