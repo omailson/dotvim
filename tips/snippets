@@ -118,3 +118,9 @@ unix -> dos
 :w
 
 http://vim.wikia.com/wiki/File_format
+
+= Change encoding (this will change the file)
+:write ++enc=utf-8 file.txt
+
+= Insert hexadecimal byte
+^VXnn (with 00 <= nn <= FF)
