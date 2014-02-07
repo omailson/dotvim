@@ -58,9 +58,6 @@
 [submodule "plugins/bookmarking"]
 	path = plugins/bookmarking
 	url = git://github.com/dterei/VimBookmarking.git
-[submodule "plugins/zencoding"]
-	path = plugins/zencoding
-	url = git://github.com/mattn/zencoding-vim.git
 [submodule "plugins/syntaxrange"]
 	path = plugins/syntaxrange
 	url = git://github.com/vim-scripts/SyntaxRange.git
@@ -70,3 +67,6 @@
 [submodule "plugins/html5"]
 	path = plugins/html5
 	url = git://github.com/othree/html5.vim.git
+[submodule "plugins/emmet-vim"]
+	path = plugins/emmet-vim
+	url = git://github.com/mattn/emmet-vim.git
