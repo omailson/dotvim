@@ -1,3 +1,5 @@
+scriptencoding utf-8
+set encoding=utf8
 set nocompatible  " not compatible to Vi
 
 " Set where the vim folder is located. It's useful if you put your plugins in
