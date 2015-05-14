@@ -146,7 +146,7 @@ command Wsudo :execute ':silent w !sudo tee % > /dev/null' | :edit!
 " Avoid accidentally saving as super user
 command W :w
 
-command! -nargs=* Identation call DoTabs( '<args>' )
+command! -nargs=* Indentation call DoTabs( '<args>' )
 
 fun! DoTabs (arg)
     if len(a:arg) == 0
