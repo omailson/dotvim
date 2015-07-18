@@ -28,21 +28,12 @@
 [submodule "plugins/AutoClose"]
 	path = plugins/AutoClose
 	url = git://github.com/vim-scripts/AutoClose.git
-[submodule "plugins/lodgeit.vim"]
-	path = plugins/lodgeit.vim
-	url = git://github.com/omailson/lodgeit.vim.git
 [submodule "plugins/fugitive"]
 	path = plugins/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
 [submodule "plugins/haskellmode-vim"]
 	path = plugins/haskellmode-vim
 	url = git://github.com/lukerandall/haskellmode-vim.git
-[submodule "plugins/alex"]
-	path = plugins/alex
-	url = git://github.com/vim-scripts/alex.vim.git
-[submodule "plugins/happy"]
-	path = plugins/happy
-	url = git://github.com/vim-scripts/happy.vim.git
 [submodule "plugins/tcomment"]
 	path = plugins/tcomment
 	url = git://github.com/tomtom/tcomment_vim.git
