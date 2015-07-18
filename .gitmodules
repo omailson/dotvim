@@ -70,3 +70,9 @@
 [submodule "plugins/emmet-vim"]
 	path = plugins/emmet-vim
 	url = git://github.com/mattn/emmet-vim.git
+[submodule "plugins/vim-jekyll"]
+	path = plugins/vim-jekyll
+	url = https://github.com/parkr/vim-jekyll.git
+[submodule "plugins/vim-liquid"]
+	path = plugins/vim-liquid
+	url = https://github.com/tpope/vim-liquid.git
