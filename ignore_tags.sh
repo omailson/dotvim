@@ -2,7 +2,7 @@
 
 # Add doc/tags to the ignore list of submodules
 
-MODULES_LIST="bookmarking pastie snipmate.vim syntaxrange"
+MODULES_LIST="bookmarking pastie snipmate.vim syntaxrange vim-jekyll"
 
 for m in $MODULES_LIST
 do
