@@ -9,6 +9,7 @@ helptags:
 	@test -e vimrc\
 		&& vim -u vimrc -c 'Helptags|quit'\
 		&& echo "Documentation files created"\
+		&& ./ignore_tags.sh\
 		|| echo "Cannot find vimrc. Did you run ./configure.sh?"
 
 install:
