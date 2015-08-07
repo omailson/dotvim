@@ -67,3 +67,6 @@
 [submodule "plugins/vim-liquid"]
 	path = plugins/vim-liquid
 	url = https://github.com/tpope/vim-liquid.git
+[submodule "plugins/gitignore"]
+	path = plugins/gitignore
+	url = https://github.com/vim-scripts/gitignore.git
