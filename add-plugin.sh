@@ -3,7 +3,7 @@
 # Add a new plugin
 # Usage: ./add-plugin.sh plugin_name repository_url
 
-if "$#" -ne 2
+if [ "$#" -ne 2 ]
 then
 	echo "Invalid number of parameters"
 	exit 1
