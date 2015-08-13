@@ -5,8 +5,6 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 
 " Shortcuts to work with windows
-nnoremap <up> <C-W>+
-nnoremap <down> <C-W>-
 nnoremap <left> <C-W><
 nnoremap <right> <C-W>>
 nnoremap <C-W>s <C-W>s<C-W>j
@@ -14,12 +12,16 @@ nnoremap <C-W>v <C-W>v<C-W>l
 nnoremap <C-W><C-V> <C-W>v<C-W>l
 
 " Visual move between lines
-nnoremap <C-j> gj
-nnoremap <C-k> gk
+nnoremap <down> gj
+nnoremap <up> gk
 
 " Horizontal scroll
 nnoremap <C-h> 3zh
 nnoremap <C-l> 3zl
+
+" Vertical scroll
+nnoremap <C-j> 3gj
+nnoremap <C-k> 3gk
 
 " Inserir uma linha abaixo do cursor e continuar no modo normal
 map ,o o<Esc>
