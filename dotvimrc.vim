@@ -132,7 +132,7 @@ if exists("g:dotvim_tmpdir")
 endif
 
 " Acho que é para gravar marcas, registradores e afins.
-if MySys() == "linux"
+if MySys() == "linux" || MySys() == "mac"
 	set viminfo='10,\"30,:20,%,n~/.viminfo
 elseif MySys() == "windows"
 	set viminfo='10,\"30,:20,%,nC:/Users/mailson/_viminfo

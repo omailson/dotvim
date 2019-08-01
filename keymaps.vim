@@ -66,6 +66,13 @@ nmap <A-Up> mz:m-2<cr>`z
 vmap <A-Down> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <A-Up> :m'<-2<cr>`>my`<mzgv`yo`z
 
+if MySys() == "mac"
+    nmap <Esc><Esc>[B mz:m+<cr>`z
+    nmap <Esc><Esc>[A mz:m-2<cr>`z
+    vmap <Esc><Esc>[B :m'>+<cr>`<my`>mzgv`yo`z
+    vmap <Esc><Esc>[A :m'<-2<cr>`>my`<mzgv`yo`z
+endif
+
 " Turn spell check on/off
 map <F1> :call SpellCheckToggle()<CR>
 
