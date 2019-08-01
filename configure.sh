@@ -108,6 +108,10 @@ endif
 exe "source ".g:dotvim_path."/dotvimrc.vim"
 EOF
 
+# Download submodules
+echo "Downloading plugins..."
+git submodule update --init
+
 cat << EOF
 
 This step is over but we're not done yet.
