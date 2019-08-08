@@ -1,0 +1,12 @@
+# YAB integration
+snippet #!
+	#!/usr/bin/env yab
+	
+
+snippet init
+	service: ${1}
+	method: ${2}
+	peer: ${3:127.0.0.1}:${4:6379}
+	thrift: ${5:idl/code.uber.internal/}${6}
+	request:
+		${7}

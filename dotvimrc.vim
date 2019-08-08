@@ -267,6 +267,13 @@ au FileType java setlocal noexpandtab
 "" Shell
 au FileType sh setlocal noexpandtab
 
+"" YAB
+au BufRead,BufNewFile *.yab setfiletype yaml
+" au BufRead,BufNewFile *.yab setfiletype yab
+" au BufRead,BufNewFile *.yab set syntax=yaml
+" au BufRead,BufNewFile *.yab exe 'runtime! indent/yaml.vim'
+" au BufRead,BufNewFile *.yab exe 'runtime! ftplugin/yaml.vim'
+
 "" Command-T
 let g:CommandTMaxHeight=15
 
