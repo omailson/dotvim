@@ -287,3 +287,4 @@ let g:tcomment_types = {'qml': '// %s', 'plaintex': '%% %s', 'cuda': '// %s', 'c
 let g:tagbar_autofocus = 1
 
 exe "source ".g:dotvim_path."/keymaps.vim"
+exe "source ".g:dotvim_path."/abbreviations.vim"
