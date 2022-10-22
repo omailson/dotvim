@@ -22,3 +22,10 @@ uninstall:
 		&& rm ~/.vimrc\
 		&& echo "~/.vimrc successfully removed"\
 		|| echo "Can't remove ~/.vimrc (the only installed file)"
+
+.PHONY:\
+	commandt \
+	helptags \
+	install \
+	uninstall \
+	all
