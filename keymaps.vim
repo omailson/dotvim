@@ -88,10 +88,17 @@ map ,n :call ShowNumberStatus()<CR>
 """" PLUGINS
 "" NERDTree
 map <F2> :NERDTreeToggle<CR>
-map <S-F2> :NERDTreeFind<CR>
+if MySys() == "mac"
+    map <Leader><F2> :NERDTreeFind<CR>
+else
+    map <S-F2> :NERDTreeFind<CR>
+endif
 
 "" A
 nmap <F4> :A<CR>
+" iunmap <buffer> \ih
+" iunmap <Leader>is
+" iunmap <Leader>ihn
 
 "" Tagbar
 nnoremap <F8> :TagbarToggle<CR>
